@@ -49,7 +49,8 @@ ARCHITECTURE a OF SCOMP IS
 		EX_OUT,
 		EX_OUT2,
 		EX_LOADI,
-		EX_RETI
+		EX_RETI,
+		EX_LOADA
 	);
 
 	TYPE STACK_TYPE IS ARRAY (0 TO 7) OF STD_LOGIC_VECTOR(9 DOWNTO 0);
@@ -240,6 +241,8 @@ BEGIN
 							STATE <= EX_RETI;
 						WHEN "010111" =>       -- LOADI
 							STATE <= EX_LOADI;
+						WHEN "01"&x"8" =>	   -- LOADA
+							STATE <= EX_LOADA;
 
 						WHEN OTHERS =>
 							STATE <= FETCH;      -- Invalid opcodes default to NOP
@@ -357,6 +360,10 @@ BEGIN
 					PC    <= PC_SAVED; -- restore saved registers
 					AC    <= AC_SAVED;
 					STATE <= FETCH;
+				
+				WHEN EX_LOADA =>		-- MDR = MEM(IR + AC)
+					IR(9 DOWNTO 0) <= IR(9 DOWNTO 0) + AC(9 DOWNTO 0);
+					STATE <= EX_LOAD;
 
 				WHEN OTHERS =>
 					STATE <= FETCH;          -- If an invalid state is reached, return to FETCH
