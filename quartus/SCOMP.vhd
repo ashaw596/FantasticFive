@@ -54,7 +54,9 @@ ARCHITECTURE a OF SCOMP IS
 		EX_SWITCH,
 		EX_COPY,
 		EX_ADDA,
-		EX_ADDIA
+		EX_ADDIA,
+		EX_STOREA,
+		EX_STOREA2
 	);
 
 	TYPE STACK_TYPE IS ARRAY (0 TO 7) OF STD_LOGIC_VECTOR(9 DOWNTO 0);
@@ -138,6 +140,9 @@ BEGIN
 
 	WITH STATE SELECT MEM_ADDR <=
 		PC WHEN FETCH,
+		AC(conv_integer(IR(4 DOWNTO 0)))(9 DOWNTO 0) WHEN EX_STOREA,
+		AC(conv_integer(IR(4 DOWNTO 0)))(9 DOWNTO 0) WHEN EX_STOREA2,
+		AC(conv_integer(IR(4 DOWNTO 0)))(9 DOWNTO 0) WHEN EX_LOADA,
 		IR(9 DOWNTO 0) WHEN OTHERS;
 
 	WITH STATE SELECT IO_CYCLE <=
@@ -253,6 +258,10 @@ BEGIN
 							STATE <= EX_SWITCH;
 						WHEN "10"&x"1" =>		-- COPY
 							STATE <= EX_COPY;
+						WHEN "10"&x"2" =>		-- ADDA
+							STATE <= EX_ADDA;
+						WHEN "10"&x"3" =>		-- ADDIA
+							STATE <= EX_ADDIA;
 						
 
 						WHEN OTHERS =>
@@ -374,7 +383,9 @@ BEGIN
 				
 				WHEN EX_LOADA =>		-- MDR = MEM(IR + AC)
 					IR(9 DOWNTO 0) <= IR(9 DOWNTO 0) + AC(0)(9 DOWNTO 0);
-					STATE <= EX_LOAD;
+					AC(conv_integer(IR(9 DOWNTO 5))) <= MDR;
+					STATE <= FETCH;
+					
 					
 				WHEN EX_SWITCH =>
 					AC_TEMP <= AC(conv_integer(IR(9 DOWNTO 5)));
@@ -386,14 +397,27 @@ BEGIN
 					AC(conv_integer(IR(9 DOWNTO 5))) <= AC(conv_integer(IR(4 DOWNTO 0)));
 					STATE <= FETCH; 
 				
-				WHEN EX_ADDA =>
+				WHEN EX_ADDA =>	
 					AC(conv_integer(IR(9 DOWNTO 6))) <= AC(conv_integer(IR(5 DOWNTO 3))) + AC(conv_integer(IR(2 DOWNTO 0)));
 					STATE <= FETCH;
 					
 				WHEN EX_ADDIA =>
 					AC(conv_integer(IR(9 DOWNTO 7))) <= AC(conv_integer(IR(9 DOWNTO 7))) + (IR(6)&IR(6)&IR(6)&IR(6)&IR(6)&IR(6)&IR(6)&IR(6)&IR(6)&IR(6 DOWNTO 0));
-					STATE <= FETCH; 
-
+					STATE <= FETCH;
+					
+				WHEN EX_STOREA =>
+					AC_TEMP <= AC(0);
+					AC(0) <= AC(conv_integer(IR(9 DOWNTO 5)));
+					MW <= '1';
+					STATE <= EX_STOREA2;
+				
+				WHEN EX_STOREA2 =>
+					MW <= '0';
+					AC(0) <= AC_TEMP;
+					STATE <= FETCH;
+					
+					
+					
 				WHEN OTHERS =>
 					STATE <= FETCH;          -- If an invalid state is reached, return to FETCH
 					
