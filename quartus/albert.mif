@@ -1,0 +1,18 @@
+-- Altera Memory Initialization File (MIF)
+
+DEPTH = 1024;
+WIDTH = 16;
+
+ADDRESS_RADIX = HEX;
+DATA_RADIX = HEX;
+
+CONTENT
+  BEGIN
+    [000..3FF] : 0000;  -- Default to NOP
+
+           000 : 5C04;  -- START:	LOADI		TEST1
+           001 : 6000;  -- 		LOADA		0
+           002 : 4C06;  -- 		OUT 		LCD
+           003 : 1400;  -- 		JUMP	START
+           004 : 0190;  -- TEST1:	DW	400
+  END;
