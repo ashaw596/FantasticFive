@@ -262,6 +262,8 @@ BEGIN
 							STATE <= EX_ADDA;
 						WHEN "10"&x"3" =>		-- ADDIA
 							STATE <= EX_ADDIA;
+						WHEN "10"&x"4" =>		-- STOREA
+							STATE <= EX_STOREA;
 						
 
 						WHEN OTHERS =>

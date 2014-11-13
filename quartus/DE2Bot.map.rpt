@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE2Bot
-Thu Nov 13 03:13:59 2014
+Thu Nov 13 03:52:04 2014
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -158,15 +158,15 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +------------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Nov 13 03:13:59 2014        ;
+; Analysis & Synthesis Status        ; Successful - Thu Nov 13 03:52:04 2014        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; DE2Bot                                       ;
 ; Top-level Entity Name              ; DE2bot                                       ;
 ; Family                             ; Cyclone II                                   ;
-; Total logic elements               ; 5,602                                        ;
-;     Total combinational functions  ; 5,000                                        ;
-;     Dedicated logic registers      ; 2,081                                        ;
-; Total registers                    ; 2081                                         ;
+; Total logic elements               ; 5,633                                        ;
+;     Total combinational functions  ; 5,030                                        ;
+;     Dedicated logic registers      ; 2,099                                        ;
+; Total registers                    ; 2099                                         ;
 ; Total pins                         ; 183                                          ;
 ; Total virtual pins                 ; 0                                            ;
 ; Total memory bits                  ; 90,752                                       ;
@@ -391,20 +391,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+--------------------------------------------+
 ; Resource                                    ; Usage                                      ;
 +---------------------------------------------+--------------------------------------------+
-; Estimated Total logic elements              ; 5,602                                      ;
+; Estimated Total logic elements              ; 5,633                                      ;
 ;                                             ;                                            ;
-; Total combinational functions               ; 5000                                       ;
+; Total combinational functions               ; 5030                                       ;
 ; Logic element usage by number of LUT inputs ;                                            ;
-;     -- 4 input functions                    ; 2227                                       ;
-;     -- 3 input functions                    ; 1624                                       ;
-;     -- <=2 input functions                  ; 1149                                       ;
+;     -- 4 input functions                    ; 2224                                       ;
+;     -- 3 input functions                    ; 1642                                       ;
+;     -- <=2 input functions                  ; 1164                                       ;
 ;                                             ;                                            ;
 ; Logic elements by mode                      ;                                            ;
-;     -- normal mode                          ; 3491                                       ;
+;     -- normal mode                          ; 3521                                       ;
 ;     -- arithmetic mode                      ; 1509                                       ;
 ;                                             ;                                            ;
-; Total registers                             ; 2081                                       ;
-;     -- Dedicated logic registers            ; 2081                                       ;
+; Total registers                             ; 2099                                       ;
+;     -- Dedicated logic registers            ; 2099                                       ;
 ;     -- I/O registers                        ; 0                                          ;
 ;                                             ;                                            ;
 ; I/O pins                                    ; 183                                        ;
@@ -412,8 +412,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Embedded Multiplier 9-bit elements          ; 42                                         ;
 ; Total PLLs                                  ; 2                                          ;
 ; Maximum fan-out node                        ; altpll0:inst|altpll:altpll_component|_clk0 ;
-; Maximum fan-out                             ; 1149                                       ;
-; Total fan-out                               ; 24211                                      ;
+; Maximum fan-out                             ; 1168                                       ;
+; Total fan-out                               ; 24367                                      ;
 ; Average fan-out                             ; 3.28                                       ;
 +---------------------------------------------+--------------------------------------------+
 
@@ -423,7 +423,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                        ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                     ; Library Name ;
 +---------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |DE2bot                                           ; 5000 (14)         ; 2081 (0)     ; 90752       ; 42           ; 2       ; 20        ; 183  ; 0            ; |DE2bot                                                                                                                                                 ; work         ;
+; |DE2bot                                           ; 5030 (14)         ; 2099 (0)     ; 90752       ; 42           ; 2       ; 20        ; 183  ; 0            ; |DE2bot                                                                                                                                                 ; work         ;
 ;    |ACC_CLK_GEN:inst60|                           ; 112 (112)         ; 94 (94)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|ACC_CLK_GEN:inst60                                                                                                                              ;              ;
 ;    |CTIMER:inst21|                                ; 34 (34)           ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|CTIMER:inst21                                                                                                                                   ;              ;
 ;    |DAC_BEEP:inst45|                              ; 40 (1)            ; 42 (0)       ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|DAC_BEEP:inst45                                                                                                                                 ;              ;
@@ -441,22 +441,22 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;          |lpm_shiftreg:lpm_shiftreg_component|    ; 32 (32)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|DAC_BEEP:inst45|lpm_shiftreg_db0:inst6|lpm_shiftreg:lpm_shiftreg_component                                                                      ;              ;
 ;    |DIG_IN:inst5|                                 ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|DIG_IN:inst5                                                                                                                                    ;              ;
 ;    |DIG_IN:inst6|                                 ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|DIG_IN:inst6                                                                                                                                    ;              ;
-;    |I2C_INTERFACE:inst16|                         ; 310 (154)         ; 125 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|I2C_INTERFACE:inst16                                                                                                                            ;              ;
+;    |I2C_INTERFACE:inst16|                         ; 296 (140)         ; 125 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|I2C_INTERFACE:inst16                                                                                                                            ;              ;
 ;       |i2c_ctrl:inst14|                           ; 58 (58)           ; 70 (70)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|I2C_INTERFACE:inst16|i2c_ctrl:inst14                                                                                                            ;              ;
 ;       |i2c_master:inst|                           ; 98 (98)           ; 55 (55)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|I2C_INTERFACE:inst16|i2c_master:inst                                                                                                            ;              ;
-;    |IO_DECODER:inst24|                            ; 15 (15)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|IO_DECODER:inst24                                                                                                                               ;              ;
+;    |IO_DECODER:inst24|                            ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|IO_DECODER:inst24                                                                                                                               ;              ;
 ;    |LEDS:inst58|                                  ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|LEDS:inst58                                                                                                                                     ; work         ;
 ;    |LEDS:inst59|                                  ; 0 (0)             ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|LEDS:inst59                                                                                                                                     ;              ;
-;    |ODOMETRY:inst53|                              ; 452 (135)         ; 129 (129)    ; 65536       ; 4            ; 0       ; 2         ; 0    ; 0            ; |DE2bot|ODOMETRY:inst53                                                                                                                                 ;              ;
+;    |ODOMETRY:inst53|                              ; 443 (135)         ; 129 (129)    ; 65536       ; 4            ; 0       ; 2         ; 0    ; 0            ; |DE2bot|ODOMETRY:inst53                                                                                                                                 ;              ;
 ;       |altsyncram:COS_LUT|                        ; 0 (0)             ; 0 (0)        ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|ODOMETRY:inst53|altsyncram:COS_LUT                                                                                                              ;              ;
 ;          |altsyncram_r5l3:auto_generated|         ; 0 (0)             ; 0 (0)        ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|ODOMETRY:inst53|altsyncram:COS_LUT|altsyncram_r5l3:auto_generated                                                                               ;              ;
 ;       |altsyncram:SIN_LUT|                        ; 0 (0)             ; 0 (0)        ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|ODOMETRY:inst53|altsyncram:SIN_LUT                                                                                                              ;              ;
 ;          |altsyncram_06l3:auto_generated|         ; 0 (0)             ; 0 (0)        ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|ODOMETRY:inst53|altsyncram:SIN_LUT|altsyncram_06l3:auto_generated                                                                               ;              ;
-;       |lpm_bustri:IO_BUS|                         ; 28 (28)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|ODOMETRY:inst53|lpm_bustri:IO_BUS                                                                                                               ;              ;
-;       |lpm_divide:Mod0|                           ; 270 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|ODOMETRY:inst53|lpm_divide:Mod0                                                                                                                 ;              ;
-;          |lpm_divide_ulo:auto_generated|          ; 270 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|ODOMETRY:inst53|lpm_divide:Mod0|lpm_divide_ulo:auto_generated                                                                                   ;              ;
-;             |abs_divider_8dg:divider|             ; 270 (22)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|ODOMETRY:inst53|lpm_divide:Mod0|lpm_divide_ulo:auto_generated|abs_divider_8dg:divider                                                           ;              ;
-;                |alt_u_div_s5f:divider|            ; 232 (232)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|ODOMETRY:inst53|lpm_divide:Mod0|lpm_divide_ulo:auto_generated|abs_divider_8dg:divider|alt_u_div_s5f:divider                                     ;              ;
+;       |lpm_bustri:IO_BUS|                         ; 31 (31)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|ODOMETRY:inst53|lpm_bustri:IO_BUS                                                                                                               ;              ;
+;       |lpm_divide:Mod0|                           ; 258 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|ODOMETRY:inst53|lpm_divide:Mod0                                                                                                                 ;              ;
+;          |lpm_divide_ulo:auto_generated|          ; 258 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|ODOMETRY:inst53|lpm_divide:Mod0|lpm_divide_ulo:auto_generated                                                                                   ;              ;
+;             |abs_divider_8dg:divider|             ; 258 (22)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|ODOMETRY:inst53|lpm_divide:Mod0|lpm_divide_ulo:auto_generated|abs_divider_8dg:divider                                                           ;              ;
+;                |alt_u_div_s5f:divider|            ; 220 (220)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|ODOMETRY:inst53|lpm_divide:Mod0|lpm_divide_ulo:auto_generated|abs_divider_8dg:divider|alt_u_div_s5f:divider                                     ;              ;
 ;                |lpm_abs_2s9:my_abs_num|           ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|ODOMETRY:inst53|lpm_divide:Mod0|lpm_divide_ulo:auto_generated|abs_divider_8dg:divider|lpm_abs_2s9:my_abs_num                                    ;              ;
 ;       |lpm_mult:MULTIPLIERT|                      ; 19 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|ODOMETRY:inst53|lpm_mult:MULTIPLIERT                                                                                                            ;              ;
 ;          |multcore:mult_core|                     ; 19 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|ODOMETRY:inst53|lpm_mult:MULTIPLIERT|multcore:mult_core                                                                                         ;              ;
@@ -470,7 +470,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;          |mult_h3o:auto_generated|                ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |DE2bot|ODOMETRY:inst53|lpm_mult:MULTIPLIERX|mult_h3o:auto_generated                                                                                    ;              ;
 ;       |lpm_mult:MULTIPLIERY|                      ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |DE2bot|ODOMETRY:inst53|lpm_mult:MULTIPLIERY                                                                                                            ;              ;
 ;          |mult_h3o:auto_generated|                ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |DE2bot|ODOMETRY:inst53|lpm_mult:MULTIPLIERY|mult_h3o:auto_generated                                                                                    ;              ;
-;    |OPTICAL_ENCODER:inst22|                       ; 76 (3)            ; 97 (0)       ; 0           ; 3            ; 1       ; 1         ; 0    ; 0            ; |DE2bot|OPTICAL_ENCODER:inst22                                                                                                                          ;              ;
+;    |OPTICAL_ENCODER:inst22|                       ; 72 (2)            ; 97 (0)       ; 0           ; 3            ; 1       ; 1         ; 0    ; 0            ; |DE2bot|OPTICAL_ENCODER:inst22                                                                                                                          ;              ;
 ;       |POSN_VEL:inst|                             ; 69 (0)            ; 97 (0)       ; 0           ; 3            ; 1       ; 1         ; 0    ; 0            ; |DE2bot|OPTICAL_ENCODER:inst22|POSN_VEL:inst                                                                                                            ;              ;
 ;          |QUADRATURE_DECODE:inst|                 ; 5 (5)             ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|OPTICAL_ENCODER:inst22|POSN_VEL:inst|QUADRATURE_DECODE:inst                                                                                     ;              ;
 ;          |lpm_add_sub_oe0:inst15|                 ; 27 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|OPTICAL_ENCODER:inst22|POSN_VEL:inst|lpm_add_sub_oe0:inst15                                                                                     ;              ;
@@ -486,11 +486,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;          |lpm_mult_oe0:inst18|                    ; 5 (0)             ; 0 (0)        ; 0           ; 3            ; 1       ; 1         ; 0    ; 0            ; |DE2bot|OPTICAL_ENCODER:inst22|POSN_VEL:inst|lpm_mult_oe0:inst18                                                                                        ;              ;
 ;             |lpm_mult:lpm_mult_component|         ; 5 (0)             ; 0 (0)        ; 0           ; 3            ; 1       ; 1         ; 0    ; 0            ; |DE2bot|OPTICAL_ENCODER:inst22|POSN_VEL:inst|lpm_mult_oe0:inst18|lpm_mult:lpm_mult_component                                                            ;              ;
 ;                |mult_j2n:auto_generated|          ; 5 (5)             ; 0 (0)        ; 0           ; 3            ; 1       ; 1         ; 0    ; 0            ; |DE2bot|OPTICAL_ENCODER:inst22|POSN_VEL:inst|lpm_mult_oe0:inst18|lpm_mult:lpm_mult_component|mult_j2n:auto_generated                                    ;              ;
-;       |lpm_bustri_oe0:inst4|                      ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|OPTICAL_ENCODER:inst22|lpm_bustri_oe0:inst4                                                                                                     ;              ;
-;          |lpm_bustri:lpm_bustri_component|        ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|OPTICAL_ENCODER:inst22|lpm_bustri_oe0:inst4|lpm_bustri:lpm_bustri_component                                                                     ;              ;
-;       |lpm_bustri_oe0:inst6|                      ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|OPTICAL_ENCODER:inst22|lpm_bustri_oe0:inst6                                                                                                     ;              ;
-;          |lpm_bustri:lpm_bustri_component|        ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|OPTICAL_ENCODER:inst22|lpm_bustri_oe0:inst6|lpm_bustri:lpm_bustri_component                                                                     ;              ;
-;    |OPTICAL_ENCODER:inst27|                       ; 71 (2)            ; 97 (0)       ; 0           ; 3            ; 1       ; 1         ; 0    ; 0            ; |DE2bot|OPTICAL_ENCODER:inst27                                                                                                                          ;              ;
+;       |lpm_bustri_oe0:inst6|                      ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|OPTICAL_ENCODER:inst22|lpm_bustri_oe0:inst6                                                                                                     ;              ;
+;          |lpm_bustri:lpm_bustri_component|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|OPTICAL_ENCODER:inst22|lpm_bustri_oe0:inst6|lpm_bustri:lpm_bustri_component                                                                     ;              ;
+;    |OPTICAL_ENCODER:inst27|                       ; 77 (3)            ; 97 (0)       ; 0           ; 3            ; 1       ; 1         ; 0    ; 0            ; |DE2bot|OPTICAL_ENCODER:inst27                                                                                                                          ;              ;
 ;       |POSN_VEL:inst|                             ; 69 (0)            ; 97 (0)       ; 0           ; 3            ; 1       ; 1         ; 0    ; 0            ; |DE2bot|OPTICAL_ENCODER:inst27|POSN_VEL:inst                                                                                                            ;              ;
 ;          |QUADRATURE_DECODE:inst|                 ; 5 (5)             ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|OPTICAL_ENCODER:inst27|POSN_VEL:inst|QUADRATURE_DECODE:inst                                                                                     ;              ;
 ;          |lpm_add_sub_oe0:inst15|                 ; 27 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|OPTICAL_ENCODER:inst27|POSN_VEL:inst|lpm_add_sub_oe0:inst15                                                                                     ;              ;
@@ -506,6 +504,10 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;          |lpm_mult_oe0:inst18|                    ; 5 (0)             ; 0 (0)        ; 0           ; 3            ; 1       ; 1         ; 0    ; 0            ; |DE2bot|OPTICAL_ENCODER:inst27|POSN_VEL:inst|lpm_mult_oe0:inst18                                                                                        ;              ;
 ;             |lpm_mult:lpm_mult_component|         ; 5 (0)             ; 0 (0)        ; 0           ; 3            ; 1       ; 1         ; 0    ; 0            ; |DE2bot|OPTICAL_ENCODER:inst27|POSN_VEL:inst|lpm_mult_oe0:inst18|lpm_mult:lpm_mult_component                                                            ;              ;
 ;                |mult_j2n:auto_generated|          ; 5 (5)             ; 0 (0)        ; 0           ; 3            ; 1       ; 1         ; 0    ; 0            ; |DE2bot|OPTICAL_ENCODER:inst27|POSN_VEL:inst|lpm_mult_oe0:inst18|lpm_mult:lpm_mult_component|mult_j2n:auto_generated                                    ;              ;
+;       |lpm_bustri_oe0:inst4|                      ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|OPTICAL_ENCODER:inst27|lpm_bustri_oe0:inst4                                                                                                     ;              ;
+;          |lpm_bustri:lpm_bustri_component|        ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|OPTICAL_ENCODER:inst27|lpm_bustri_oe0:inst4|lpm_bustri:lpm_bustri_component                                                                     ;              ;
+;       |lpm_bustri_oe0:inst6|                      ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|OPTICAL_ENCODER:inst27|lpm_bustri_oe0:inst6                                                                                                     ;              ;
+;          |lpm_bustri:lpm_bustri_component|        ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|OPTICAL_ENCODER:inst27|lpm_bustri_oe0:inst6|lpm_bustri:lpm_bustri_component                                                                     ;              ;
 ;    |QUAD_HEX:inst56|                              ; 28 (0)            ; 16 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|QUAD_HEX:inst56                                                                                                                                 ; work         ;
 ;       |HEX_DISP:inst15|                           ; 7 (7)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|QUAD_HEX:inst56|HEX_DISP:inst15                                                                                                                 ; work         ;
 ;       |HEX_DISP:inst21|                           ; 7 (7)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|QUAD_HEX:inst56|HEX_DISP:inst21                                                                                                                 ; work         ;
@@ -517,17 +519,17 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;       |HEX_DISP:inst22|                           ; 7 (7)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|QUAD_HEX:inst57|HEX_DISP:inst22                                                                                                                 ;              ;
 ;       |HEX_DISP:inst27|                           ; 7 (7)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|QUAD_HEX:inst57|HEX_DISP:inst27                                                                                                                 ;              ;
 ;    |SAFETY_ENABLE:inst4|                          ; 1 (1)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|SAFETY_ENABLE:inst4                                                                                                                             ;              ;
-;    |SCOMP:inst8|                                  ; 1216 (1126)       ; 311 (311)    ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|SCOMP:inst8                                                                                                                                     ;              ;
+;    |SCOMP:inst8|                                  ; 1259 (1168)       ; 329 (329)    ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|SCOMP:inst8                                                                                                                                     ;              ;
 ;       |altsyncram:MEMORY|                         ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|SCOMP:inst8|altsyncram:MEMORY                                                                                                                   ;              ;
 ;          |altsyncram_63t3:auto_generated|         ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|SCOMP:inst8|altsyncram:MEMORY|altsyncram_63t3:auto_generated                                                                                    ;              ;
 ;       |lpm_bustri:IO_BUS|                         ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|SCOMP:inst8|lpm_bustri:IO_BUS                                                                                                                   ;              ;
-;       |lpm_clshift:SHIFTER|                       ; 83 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|SCOMP:inst8|lpm_clshift:SHIFTER                                                                                                                 ;              ;
-;          |lpm_clshift_fuc:auto_generated|         ; 83 (83)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|SCOMP:inst8|lpm_clshift:SHIFTER|lpm_clshift_fuc:auto_generated                                                                                  ;              ;
+;       |lpm_clshift:SHIFTER|                       ; 84 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|SCOMP:inst8|lpm_clshift:SHIFTER                                                                                                                 ;              ;
+;          |lpm_clshift_fuc:auto_generated|         ; 84 (84)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|SCOMP:inst8|lpm_clshift:SHIFTER|lpm_clshift_fuc:auto_generated                                                                                  ;              ;
 ;    |SLCD:inst55|                                  ; 85 (85)           ; 49 (49)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|SLCD:inst55                                                                                                                                     ;              ;
 ;    |SONAR:inst54|                                 ; 629 (613)         ; 344 (344)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|SONAR:inst54                                                                                                                                    ;              ;
 ;       |lpm_bustri:IO_BUS|                         ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|SONAR:inst54|lpm_bustri:IO_BUS                                                                                                                  ;              ;
-;    |TIMER:inst20|                                 ; 20 (19)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|TIMER:inst20                                                                                                                                    ;              ;
-;       |lpm_bustri:IO_BUS|                         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|TIMER:inst20|lpm_bustri:IO_BUS                                                                                                                  ;              ;
+;    |TIMER:inst20|                                 ; 25 (19)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|TIMER:inst20                                                                                                                                    ;              ;
+;       |lpm_bustri:IO_BUS|                         ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|TIMER:inst20|lpm_bustri:IO_BUS                                                                                                                  ;              ;
 ;    |UART_INTERFACE:inst1|                         ; 235 (5)           ; 249 (0)      ; 640         ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|UART_INTERFACE:inst1                                                                                                                            ;              ;
 ;       |UART:inst2|                                ; 70 (70)           ; 53 (53)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|UART_INTERFACE:inst1|UART:inst2                                                                                                                 ;              ;
 ;       |UART_LIMITER:inst11|                       ; 29 (29)           ; 23 (23)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|UART_INTERFACE:inst1|UART_LIMITER:inst11                                                                                                        ;              ;
@@ -571,7 +573,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;                |mux_1u7:rdemp_eq_comp_msb_mux|    ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|UART_INTERFACE:inst1|uart_dcfifo_out:inst14|dcfifo:dcfifo_component|dcfifo_31m1:auto_generated|mux_1u7:rdemp_eq_comp_msb_mux                    ;              ;
 ;                |mux_1u7:wrfull_eq_comp_lsb_mux|   ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|UART_INTERFACE:inst1|uart_dcfifo_out:inst14|dcfifo:dcfifo_component|dcfifo_31m1:auto_generated|mux_1u7:wrfull_eq_comp_lsb_mux                   ;              ;
 ;                |mux_1u7:wrfull_eq_comp_msb_mux|   ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|UART_INTERFACE:inst1|uart_dcfifo_out:inst14|dcfifo:dcfifo_component|dcfifo_31m1:auto_generated|mux_1u7:wrfull_eq_comp_msb_mux                   ;              ;
-;    |VEL_CONTROL:inst51|                           ; 779 (668)         ; 180 (168)    ; 0           ; 16           ; 0       ; 8         ; 0    ; 0            ; |DE2bot|VEL_CONTROL:inst51                                                                                                                              ;              ;
+;    |VEL_CONTROL:inst51|                           ; 781 (670)         ; 180 (168)    ; 0           ; 16           ; 0       ; 8         ; 0    ; 0            ; |DE2bot|VEL_CONTROL:inst51                                                                                                                              ;              ;
 ;       |lpm_compare:compare|                       ; 20 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|VEL_CONTROL:inst51|lpm_compare:compare                                                                                                          ;              ;
 ;          |cmpr_a2i:auto_generated|                ; 20 (20)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|VEL_CONTROL:inst51|lpm_compare:compare|cmpr_a2i:auto_generated                                                                                  ;              ;
 ;       |lpm_counter:counter|                       ; 12 (0)            ; 12 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|VEL_CONTROL:inst51|lpm_counter:counter                                                                                                          ;              ;
@@ -931,9 +933,6 @@ Encoding Type:  One-Hot
 ; oneshot_i2c:inst18|i2c_master:inst|addr_rw[5]                                                                                ; Stuck at VCC due to stuck port data_in                                        ;
 ; oneshot_i2c:inst18|i2c_master:inst|count[2]                                                                                  ; Stuck at GND due to stuck port data_in                                        ;
 ; I2C_INTERFACE:inst16|i2c_master:inst|count[2]                                                                                ; Stuck at GND due to stuck port data_in                                        ;
-; SCOMP:inst8|AC_TEMP[0..15]                                                                                                   ; Lost fanout                                                                   ;
-; SCOMP:inst8|STATE.EX_STOREA                                                                                                  ; Lost fanout                                                                   ;
-; SCOMP:inst8|STATE.EX_STOREA2                                                                                                 ; Lost fanout                                                                   ;
 ; oneshot_i2c:inst18|i2c_master:inst|state.rd                                                                                  ; Stuck at GND due to stuck port data_in                                        ;
 ; oneshot_i2c:inst18|i2c_master:inst|state.mstr_ack                                                                            ; Stuck at GND due to stuck port data_in                                        ;
 ; oneshot_i2c:inst18|i2c_master:inst|state.restart                                                                             ; Stuck at GND due to stuck port data_in                                        ;
@@ -1003,7 +1002,7 @@ Encoding Type:  One-Hot
 ; OPTICAL_ENCODER:inst27|POSN_VEL:inst|lpm_dff_oe0:inst12|lpm_ff:lpm_ff_component|dffs[1]                                      ; Lost fanout                                                                   ;
 ; OPTICAL_ENCODER:inst27|POSN_VEL:inst|lpm_dff_oe0:inst14|lpm_ff:lpm_ff_component|dffs[0]                                      ; Lost fanout                                                                   ;
 ; OPTICAL_ENCODER:inst27|POSN_VEL:inst|lpm_dff_oe0:inst12|lpm_ff:lpm_ff_component|dffs[0]                                      ; Lost fanout                                                                   ;
-; Total Number of Removed Registers = 247                                                                                      ;                                                                               ;
+; Total Number of Removed Registers = 229                                                                                      ;                                                                               ;
 +------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 
@@ -1104,12 +1103,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 2081  ;
+; Total registers                              ; 2099  ;
 ; Number of registers using Synchronous Clear  ; 163   ;
-; Number of registers using Synchronous Load   ; 186   ;
-; Number of registers using Asynchronous Clear ; 1369  ;
+; Number of registers using Synchronous Load   ; 202   ;
+; Number of registers using Asynchronous Clear ; 1371  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 880   ;
+; Number of registers using Clock Enable       ; 896   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -1233,50 +1232,50 @@ Encoding Type:  One-Hot
 ; 3:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |DE2bot|VEL_CONTROL:inst51|MOTOR_CMD[21]                      ;
 ; 3:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |DE2bot|VEL_CONTROL:inst52|MOTOR_CMD[13]                      ;
 ; 3:1                ; 70 bits   ; 140 LEs       ; 70 LEs               ; 70 LEs                 ; Yes        ; |DE2bot|SCOMP:inst8|PC_STACK[5][1]                            ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |DE2bot|SCOMP:inst8|IR[9]                                     ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE2bot|SCOMP:inst8|AC_TEMP[1]                                ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |DE2bot|UART_INTERFACE:inst1|UART:inst2|uart_tx_data_block[3] ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |DE2bot|SCOMP:inst8|IR[7]                                     ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE2bot|SCOMP:inst8|AC_TEMP[7]                                ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |DE2bot|UART_INTERFACE:inst1|UART:inst2|uart_tx_data_block[5] ;
 ; 6:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; Yes        ; |DE2bot|SCOMP:inst8|INT_ACK[1]                                ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |DE2bot|oneshot_i2c:inst18|i2c_oneshot_ctrl:inst3|cmd_num[1]  ;
-; 7:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |DE2bot|SLCD:inst55|LCD_D[0]                                  ;
-; 6:1                ; 10 bits   ; 40 LEs        ; 10 LEs               ; 30 LEs                 ; Yes        ; |DE2bot|SLCD:inst55|count[4]                                  ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 0 LEs                ; 6 LEs                  ; Yes        ; |DE2bot|oneshot_i2c:inst18|i2c_master:inst|addr_rw[5]         ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 0 LEs                ; 24 LEs                 ; Yes        ; |DE2bot|oneshot_i2c:inst18|i2c_master:inst|data_tx[7]         ;
-; 5:1                ; 16 bits   ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |DE2bot|I2C_INTERFACE:inst16|i2c_master:inst|addr_rw[3]       ;
-; 7:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |DE2bot|I2C_INTERFACE:inst16|i2c_ctrl:inst14|tx_byte[0]       ;
-; 13:1               ; 3 bits    ; 24 LEs        ; 18 LEs               ; 6 LEs                  ; Yes        ; |DE2bot|oneshot_i2c:inst18|i2c_oneshot_ctrl:inst3|tx_byte[5]  ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |DE2bot|SCOMP:inst8|AC[7][5]                                  ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |DE2bot|SCOMP:inst8|AC[6][2]                                  ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |DE2bot|SCOMP:inst8|AC[5][14]                                 ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |DE2bot|SCOMP:inst8|AC[4][11]                                 ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |DE2bot|SCOMP:inst8|AC[3][3]                                  ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |DE2bot|SCOMP:inst8|AC[2][10]                                 ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; Yes        ; |DE2bot|SCOMP:inst8|AC[1][1]                                  ;
-; 6:1                ; 17 bits   ; 68 LEs        ; 17 LEs               ; 51 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[0][15]                      ;
-; 6:1                ; 17 bits   ; 68 LEs        ; 17 LEs               ; 51 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[9][4]                       ;
-; 6:1                ; 17 bits   ; 68 LEs        ; 17 LEs               ; 51 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[10][14]                     ;
-; 6:1                ; 17 bits   ; 68 LEs        ; 17 LEs               ; 51 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[11][8]                      ;
-; 6:1                ; 17 bits   ; 68 LEs        ; 17 LEs               ; 51 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[12][6]                      ;
-; 6:1                ; 17 bits   ; 68 LEs        ; 17 LEs               ; 51 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[13][15]                     ;
-; 6:1                ; 17 bits   ; 68 LEs        ; 17 LEs               ; 51 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[14][2]                      ;
-; 6:1                ; 17 bits   ; 68 LEs        ; 17 LEs               ; 51 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[15][0]                      ;
-; 21:1               ; 4 bits    ; 56 LEs        ; 40 LEs               ; 16 LEs                 ; Yes        ; |DE2bot|oneshot_i2c:inst18|i2c_oneshot_ctrl:inst3|tx_byte[2]  ;
-; 17:1               ; 10 bits   ; 110 LEs       ; 60 LEs               ; 50 LEs                 ; Yes        ; |DE2bot|SCOMP:inst8|PC[8]                                     ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |DE2bot|oneshot_i2c:inst18|i2c_master:inst|bit_cnt[2]         ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |DE2bot|I2C_INTERFACE:inst16|i2c_master:inst|bit_cnt[0]       ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |DE2bot|oneshot_i2c:inst18|i2c_oneshot_ctrl:inst3|cmd_num[2]  ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |DE2bot|SLCD:inst55|LCD_D[3]                                  ;
+; 6:1                ; 10 bits   ; 40 LEs        ; 10 LEs               ; 30 LEs                 ; Yes        ; |DE2bot|SLCD:inst55|count[1]                                  ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 0 LEs                ; 6 LEs                  ; Yes        ; |DE2bot|oneshot_i2c:inst18|i2c_master:inst|addr_rw[7]         ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 0 LEs                ; 24 LEs                 ; Yes        ; |DE2bot|oneshot_i2c:inst18|i2c_master:inst|data_tx[4]         ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |DE2bot|I2C_INTERFACE:inst16|i2c_master:inst|data_tx[6]       ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |DE2bot|I2C_INTERFACE:inst16|i2c_ctrl:inst14|tx_byte[1]       ;
+; 13:1               ; 3 bits    ; 24 LEs        ; 18 LEs               ; 6 LEs                  ; Yes        ; |DE2bot|oneshot_i2c:inst18|i2c_oneshot_ctrl:inst3|tx_byte[6]  ;
+; 6:1                ; 17 bits   ; 68 LEs        ; 17 LEs               ; 51 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[8][12]                      ;
+; 6:1                ; 17 bits   ; 68 LEs        ; 17 LEs               ; 51 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[9][12]                      ;
+; 6:1                ; 17 bits   ; 68 LEs        ; 17 LEs               ; 51 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[10][2]                      ;
+; 6:1                ; 17 bits   ; 68 LEs        ; 17 LEs               ; 51 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[11][12]                     ;
+; 6:1                ; 17 bits   ; 68 LEs        ; 17 LEs               ; 51 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[12][5]                      ;
+; 6:1                ; 17 bits   ; 68 LEs        ; 17 LEs               ; 51 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[13][2]                      ;
+; 6:1                ; 17 bits   ; 68 LEs        ; 17 LEs               ; 51 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[14][13]                     ;
+; 6:1                ; 17 bits   ; 68 LEs        ; 17 LEs               ; 51 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[15][14]                     ;
+; 10:1               ; 16 bits   ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; Yes        ; |DE2bot|SCOMP:inst8|AC[7][2]                                  ;
+; 10:1               ; 16 bits   ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; Yes        ; |DE2bot|SCOMP:inst8|AC[6][5]                                  ;
+; 10:1               ; 16 bits   ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; Yes        ; |DE2bot|SCOMP:inst8|AC[5][6]                                  ;
+; 10:1               ; 16 bits   ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; Yes        ; |DE2bot|SCOMP:inst8|AC[4][5]                                  ;
+; 10:1               ; 16 bits   ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; Yes        ; |DE2bot|SCOMP:inst8|AC[3][15]                                 ;
+; 10:1               ; 16 bits   ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; Yes        ; |DE2bot|SCOMP:inst8|AC[2][2]                                  ;
+; 10:1               ; 16 bits   ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; Yes        ; |DE2bot|SCOMP:inst8|AC[1][15]                                 ;
+; 21:1               ; 4 bits    ; 56 LEs        ; 40 LEs               ; 16 LEs                 ; Yes        ; |DE2bot|oneshot_i2c:inst18|i2c_oneshot_ctrl:inst3|tx_byte[4]  ;
+; 17:1               ; 10 bits   ; 110 LEs       ; 60 LEs               ; 50 LEs                 ; Yes        ; |DE2bot|SCOMP:inst8|PC[5]                                     ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |DE2bot|oneshot_i2c:inst18|i2c_master:inst|bit_cnt[0]         ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |DE2bot|I2C_INTERFACE:inst16|i2c_master:inst|bit_cnt[2]       ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 0 LEs                ; 4 LEs                  ; Yes        ; |DE2bot|UART_INTERFACE:inst1|UART:inst2|uart_rx_filter[0]     ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |DE2bot|I2C_INTERFACE:inst16|i2c_ctrl:inst14|data_out[12]     ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |DE2bot|I2C_INTERFACE:inst16|i2c_ctrl:inst14|data_out[0]      ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |DE2bot|oneshot_i2c:inst18|i2c_oneshot_ctrl:inst3|cmd_num[3]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |DE2bot|I2C_INTERFACE:inst16|i2c_ctrl:inst14|data_out[10]     ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |DE2bot|I2C_INTERFACE:inst16|i2c_ctrl:inst14|data_out[5]      ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |DE2bot|oneshot_i2c:inst18|i2c_oneshot_ctrl:inst3|cmd_num[0]  ;
 ; 6:1                ; 15 bits   ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[0][11]                      ;
-; 6:1                ; 15 bits   ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[1][8]                       ;
-; 6:1                ; 15 bits   ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[2][9]                       ;
-; 6:1                ; 15 bits   ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[3][1]                       ;
-; 6:1                ; 15 bits   ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[4][9]                       ;
-; 6:1                ; 15 bits   ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[5][12]                      ;
-; 6:1                ; 15 bits   ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[6][1]                       ;
-; 6:1                ; 15 bits   ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[7][3]                       ;
-; 23:1               ; 16 bits   ; 240 LEs       ; 160 LEs              ; 80 LEs                 ; Yes        ; |DE2bot|SCOMP:inst8|AC[0][1]                                  ;
+; 6:1                ; 15 bits   ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[1][9]                       ;
+; 6:1                ; 15 bits   ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[2][12]                      ;
+; 6:1                ; 15 bits   ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[3][6]                       ;
+; 6:1                ; 15 bits   ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[4][10]                      ;
+; 6:1                ; 15 bits   ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[5][10]                      ;
+; 6:1                ; 15 bits   ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[6][2]                       ;
+; 6:1                ; 15 bits   ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[7][14]                      ;
+; 25:1               ; 16 bits   ; 256 LEs       ; 160 LEs              ; 96 LEs                 ; Yes        ; |DE2bot|SCOMP:inst8|AC[0][14]                                 ;
 ; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; No         ; |DE2bot|VEL_CONTROL:inst51|FF_CTRL                            ;
 ; 3:1                ; 23 bits   ; 46 LEs        ; 46 LEs               ; 0 LEs                  ; No         ; |DE2bot|VEL_CONTROL:inst51|FF_CTRL                            ;
 ; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; No         ; |DE2bot|VEL_CONTROL:inst52|FF_CTRL                            ;
@@ -1287,20 +1286,19 @@ Encoding Type:  One-Hot
 ; 3:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; No         ; |DE2bot|VEL_CONTROL:inst51|INT_CTRL                           ;
 ; 3:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; No         ; |DE2bot|VEL_CONTROL:inst52|CMD_VEL                            ;
 ; 3:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; No         ; |DE2bot|VEL_CONTROL:inst52|INT_CTRL                           ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |DE2bot|SCOMP:inst8|STATE                                     ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |DE2bot|oneshot_i2c:inst18|i2c_master:inst|count              ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |DE2bot|I2C_INTERFACE:inst16|i2c_master:inst|count            ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |DE2bot|SCOMP:inst8|Mux104                                    ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |DE2bot|SCOMP:inst8|Mux57                                     ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |DE2bot|SCOMP:inst8|Mux116                                    ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |DE2bot|SCOMP:inst8|Mux68                                     ;
 ; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |DE2bot|SCOMP:inst8|Mux84                                     ;
 ; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |DE2bot|SCOMP:inst8|Mux4                                      ;
-; 8:1                ; 6 bits    ; 30 LEs        ; 18 LEs               ; 12 LEs                 ; No         ; |DE2bot|ODOMETRY:inst53|Mux0                                  ;
-; 8:1                ; 10 bits   ; 50 LEs        ; 40 LEs               ; 10 LEs                 ; No         ; |DE2bot|ODOMETRY:inst53|Mux15                                 ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |DE2bot|SCOMP:inst8|Selector7                                 ;
-; 18:1               ; 8 bits    ; 96 LEs        ; 80 LEs               ; 16 LEs                 ; No         ; |DE2bot|SONAR:inst54|Mux0                                     ;
-; 18:1               ; 8 bits    ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; No         ; |DE2bot|SONAR:inst54|Mux8                                     ;
-; 64:1               ; 4 bits    ; 168 LEs       ; 8 LEs                ; 160 LEs                ; No         ; |DE2bot|SCOMP:inst8|Mux51                                     ;
-; 19:1               ; 16 bits   ; 192 LEs       ; 64 LEs               ; 128 LEs                ; No         ; |DE2bot|SCOMP:inst8|Add1                                      ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 18 LEs               ; 12 LEs                 ; No         ; |DE2bot|ODOMETRY:inst53|Mux3                                  ;
+; 8:1                ; 10 bits   ; 50 LEs        ; 40 LEs               ; 10 LEs                 ; No         ; |DE2bot|ODOMETRY:inst53|Mux6                                  ;
+; 18:1               ; 8 bits    ; 96 LEs        ; 80 LEs               ; 16 LEs                 ; No         ; |DE2bot|SONAR:inst54|Mux4                                     ;
+; 18:1               ; 8 bits    ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; No         ; |DE2bot|SONAR:inst54|Mux10                                    ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 20 LEs               ; 10 LEs                 ; No         ; |DE2bot|SCOMP:inst8|Selector8                                 ;
+; 64:1               ; 4 bits    ; 168 LEs       ; 8 LEs                ; 160 LEs                ; No         ; |DE2bot|SCOMP:inst8|Mux61                                     ;
+; 20:1               ; 16 bits   ; 208 LEs       ; 64 LEs               ; 144 LEs                ; No         ; |DE2bot|SCOMP:inst8|Add1                                      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
 
 
@@ -4198,7 +4196,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Thu Nov 13 03:13:31 2014
+    Info: Processing started: Thu Nov 13 03:51:36 2014
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE2Bot -c DE2Bot
 Info: Found 2 design units, including 1 entities, in source file acc_clk_gen.vhd
     Info: Found design unit 1: ACC_CLK_GEN-a
@@ -5122,7 +5120,7 @@ Critical Warning: Ignored Power-Up Level option on the following registers
     Critical Warning (18010): Register oneshot_i2c:inst18|i2c_oneshot_ctrl:inst3|cmd_num[3] will power up to High
     Critical Warning (18010): Register UART_INTERFACE:inst1|UART:inst2|uart_rx_filter[1] will power up to High
     Critical Warning (18010): Register UART_INTERFACE:inst1|UART:inst2|uart_rx_filter[0] will power up to High
-Info: 191 registers lost all their fanouts during netlist optimizations. The first 191 are displayed below.
+Info: 173 registers lost all their fanouts during netlist optimizations. The first 173 are displayed below.
     Info: Register "UART_INTERFACE:inst1|uart_dcfifo_out:inst14|dcfifo:dcfifo_component|dcfifo_31m1:auto_generated|dffpipe_adc:rs_bwp|dffe15a[6]" lost all its fanouts during netlist optimizations.
     Info: Register "UART_INTERFACE:inst1|uart_dcfifo_out:inst14|dcfifo:dcfifo_component|dcfifo_31m1:auto_generated|dffpipe_adc:rs_brp|dffe15a[6]" lost all its fanouts during netlist optimizations.
     Info: Register "OPTICAL_ENCODER:inst27|POSN_VEL:inst|lpm_dff_oe0:inst14|lpm_ff:lpm_ff_component|dffs[31]" lost all its fanouts during netlist optimizations.
@@ -5222,24 +5220,6 @@ Info: 191 registers lost all their fanouts during netlist optimizations. The fir
     Info: Register "OPTICAL_ENCODER:inst22|POSN_VEL:inst|lpm_dff_oe0:inst11|lpm_ff:lpm_ff_component|dffs[27]" lost all its fanouts during netlist optimizations.
     Info: Register "OPTICAL_ENCODER:inst22|POSN_VEL:inst|lpm_dff_oe0:inst10|lpm_ff:lpm_ff_component|dffs[27]" lost all its fanouts during netlist optimizations.
     Info: Register "VEL_CONTROL:inst52|SH_ACK" lost all its fanouts during netlist optimizations.
-    Info: Register "SCOMP:inst8|AC_TEMP[9]" lost all its fanouts during netlist optimizations.
-    Info: Register "SCOMP:inst8|AC_TEMP[8]" lost all its fanouts during netlist optimizations.
-    Info: Register "SCOMP:inst8|AC_TEMP[7]" lost all its fanouts during netlist optimizations.
-    Info: Register "SCOMP:inst8|AC_TEMP[6]" lost all its fanouts during netlist optimizations.
-    Info: Register "SCOMP:inst8|AC_TEMP[5]" lost all its fanouts during netlist optimizations.
-    Info: Register "SCOMP:inst8|AC_TEMP[4]" lost all its fanouts during netlist optimizations.
-    Info: Register "SCOMP:inst8|AC_TEMP[3]" lost all its fanouts during netlist optimizations.
-    Info: Register "SCOMP:inst8|AC_TEMP[2]" lost all its fanouts during netlist optimizations.
-    Info: Register "SCOMP:inst8|AC_TEMP[1]" lost all its fanouts during netlist optimizations.
-    Info: Register "SCOMP:inst8|AC_TEMP[0]" lost all its fanouts during netlist optimizations.
-    Info: Register "SCOMP:inst8|AC_TEMP[15]" lost all its fanouts during netlist optimizations.
-    Info: Register "SCOMP:inst8|AC_TEMP[14]" lost all its fanouts during netlist optimizations.
-    Info: Register "SCOMP:inst8|AC_TEMP[13]" lost all its fanouts during netlist optimizations.
-    Info: Register "SCOMP:inst8|AC_TEMP[12]" lost all its fanouts during netlist optimizations.
-    Info: Register "SCOMP:inst8|AC_TEMP[11]" lost all its fanouts during netlist optimizations.
-    Info: Register "SCOMP:inst8|AC_TEMP[10]" lost all its fanouts during netlist optimizations.
-    Info: Register "SCOMP:inst8|STATE.EX_STOREA" lost all its fanouts during netlist optimizations.
-    Info: Register "SCOMP:inst8|STATE.EX_STOREA2" lost all its fanouts during netlist optimizations.
     Info: Register "ODOMETRY:inst53|XPOS[27]" lost all its fanouts during netlist optimizations.
     Info: Register "ODOMETRY:inst53|XPOS[28]" lost all its fanouts during netlist optimizations.
     Info: Register "ODOMETRY:inst53|XPOS[29]" lost all its fanouts during netlist optimizations.
@@ -5314,18 +5294,18 @@ Info: 191 registers lost all their fanouts during netlist optimizations. The fir
     Info: Register "OPTICAL_ENCODER:inst27|POSN_VEL:inst|lpm_dff_oe0:inst12|lpm_ff:lpm_ff_component|dffs[1]" lost all its fanouts during netlist optimizations.
     Info: Register "OPTICAL_ENCODER:inst27|POSN_VEL:inst|lpm_dff_oe0:inst14|lpm_ff:lpm_ff_component|dffs[0]" lost all its fanouts during netlist optimizations.
     Info: Register "OPTICAL_ENCODER:inst27|POSN_VEL:inst|lpm_dff_oe0:inst12|lpm_ff:lpm_ff_component|dffs[0]" lost all its fanouts during netlist optimizations.
-Info: Implemented 6171 device resources after synthesis - the final resource count might be different
+Info: Implemented 6218 device resources after synthesis - the final resource count might be different
     Info: Implemented 45 input pins
     Info: Implemented 134 output pins
     Info: Implemented 4 bidirectional pins
-    Info: Implemented 5864 logic cells
+    Info: Implemented 5911 logic cells
     Info: Implemented 80 RAM segments
     Info: Implemented 2 PLLs
     Info: Implemented 42 DSP elements
 Info: Quartus II Analysis & Synthesis was successful. 0 errors, 85 warnings
-    Info: Peak virtual memory: 294 megabytes
-    Info: Processing ended: Thu Nov 13 03:13:59 2014
+    Info: Peak virtual memory: 295 megabytes
+    Info: Processing ended: Thu Nov 13 03:52:04 2014
     Info: Elapsed time: 00:00:28
-    Info: Total CPU time (on all processors): 00:00:32
+    Info: Total CPU time (on all processors): 00:00:30
 
 
