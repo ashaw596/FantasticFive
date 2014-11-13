@@ -56,7 +56,8 @@ ARCHITECTURE a OF SCOMP IS
 		EX_ADDA,
 		EX_ADDIA,
 		EX_STOREA,
-		EX_STOREA2
+		EX_STOREA2,
+		EX_MULTA
 	);
 
 	TYPE STACK_TYPE IS ARRAY (0 TO 7) OF STD_LOGIC_VECTOR(9 DOWNTO 0);
@@ -264,6 +265,8 @@ BEGIN
 							STATE <= EX_ADDIA;
 						WHEN "10"&x"4" =>		-- STOREA
 							STATE <= EX_STOREA;
+						WHEN "10"&x"5" =>		-- MULTA
+							STATE <= EX_MULTA;
 						
 
 						WHEN OTHERS =>
@@ -418,7 +421,9 @@ BEGIN
 					AC(0) <= AC_TEMP;
 					STATE <= FETCH;
 					
-					
+				WHEN EX_MULTA =>
+					AC(conv_integer(IR(9 DOWNTO 7))) <= signed(AC(conv_integer(IR(6 DOWNTO 4)))) * signed(AC(conv_integer(IR(3 DOWNTO 0))));
+					STATE <= FETCH;
 					
 				WHEN OTHERS =>
 					STATE <= FETCH;          -- If an invalid state is reached, return to FETCH
