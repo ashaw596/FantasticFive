@@ -83,20 +83,30 @@ Config:
 	OUT    SONAREN     ; turn on sonars 0 and 5
 	LOADI  254
 	OUT    SONALARM    ; set alarm distance to 254mm
+
 	
 	LOADI  5
 	OUT    CTIMER      ; configure timer for 0.01*5=0.05s interrupts
 	
-	SEI    &B1011      ; enable the desired interrupts
+	SEI    &B0001      ; enable the desired interrupts
 	
 InfLoop:
 	; everything will be handled by interrupts, so the main
 	; code just displays some values that are updated by
 	; the ISRs.
-	LOAD   TCount      ; The timer ISR increments this at 20Hz
-	OUT    SSEG1
-	LOAD   SonCount    ; The sonar ISR increments this each warning
-	OUT    SSEG2
+	;LOAD   TCount      ; The timer ISR increments this at 20Hz
+	;OUT    SSEG1
+	;LOAD   SonCount    ; The sonar ISR increments this each warning
+	;OUT    SSEG2
+	
+	IN 		DIST0
+	OUT 	LCD
+	
+	IN 		DIST3
+	OUT 	SSEG1
+	
+	IN		DIST5
+	OUT		SSEG2
 	JUMP   InfLoop
 
 

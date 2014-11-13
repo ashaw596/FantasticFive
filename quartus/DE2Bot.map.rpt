@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE2Bot
-Tue Nov 11 13:59:09 2014
+Thu Nov 13 02:13:56 2014
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -29,7 +29,7 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
  21. General Register Statistics
  22. Inverted Register Statistics
  23. Multiplexer Restructuring Statistics (Restructuring Performed)
- 24. Source assignments for SCOMP:inst8|altsyncram:MEMORY|altsyncram_kcu3:auto_generated
+ 24. Source assignments for SCOMP:inst8|altsyncram:MEMORY|altsyncram_63t3:auto_generated
  25. Source assignments for OPTICAL_ENCODER:inst22|POSN_VEL:inst|lpm_counter_oe0:inst2|lpm_counter:lpm_counter_component
  26. Source assignments for OPTICAL_ENCODER:inst27|POSN_VEL:inst|lpm_counter_oe0:inst2|lpm_counter:lpm_counter_component
  27. Source assignments for ODOMETRY:inst53|altsyncram:SIN_LUT|altsyncram_06l3:auto_generated
@@ -158,15 +158,15 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +------------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Nov 11 13:59:09 2014        ;
+; Analysis & Synthesis Status        ; Successful - Thu Nov 13 02:13:55 2014        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; DE2Bot                                       ;
 ; Top-level Entity Name              ; DE2bot                                       ;
 ; Family                             ; Cyclone II                                   ;
-; Total logic elements               ; 4,903                                        ;
-;     Total combinational functions  ; 4,291                                        ;
-;     Dedicated logic registers      ; 1,964                                        ;
-; Total registers                    ; 1964                                         ;
+; Total logic elements               ; 5,181                                        ;
+;     Total combinational functions  ; 4,579                                        ;
+;     Dedicated logic registers      ; 2,078                                        ;
+; Total registers                    ; 2078                                         ;
 ; Total pins                         ; 183                                          ;
 ; Total virtual pins                 ; 0                                            ;
 ; Total memory bits                  ; 90,752                                       ;
@@ -316,8 +316,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; CTIMER.vhd                       ; yes             ; User VHDL File                         ; C:/Users/Albert/Dropbox/School/ECE 2031/FantasticFive/quartus/CTIMER.vhd                ;
 ; altpll.tdf                       ; yes             ; Megafunction                           ; c:/altera/91sp2/quartus/libraries/megafunctions/altpll.tdf                              ;
 ; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/altera/91sp2/quartus/libraries/megafunctions/altsyncram.tdf                          ;
-; db/altsyncram_kcu3.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/Albert/Dropbox/School/ECE 2031/FantasticFive/quartus/db/altsyncram_kcu3.tdf    ;
-; SimpleRobotProgram.mif           ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/Albert/Dropbox/School/ECE 2031/FantasticFive/quartus/SimpleRobotProgram.mif    ;
+; db/altsyncram_63t3.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/Albert/Dropbox/School/ECE 2031/FantasticFive/quartus/db/altsyncram_63t3.tdf    ;
+; albert.mif                       ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/Albert/Dropbox/School/ECE 2031/FantasticFive/quartus/albert.mif                ;
 ; lpm_clshift.tdf                  ; yes             ; Megafunction                           ; c:/altera/91sp2/quartus/libraries/megafunctions/lpm_clshift.tdf                         ;
 ; db/lpm_clshift_fuc.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/Albert/Dropbox/School/ECE 2031/FantasticFive/quartus/db/lpm_clshift_fuc.tdf    ;
 ; lpm_bustri.tdf                   ; yes             ; Megafunction                           ; c:/altera/91sp2/quartus/libraries/megafunctions/lpm_bustri.tdf                          ;
@@ -330,9 +330,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; db/mult_j2n.tdf                  ; yes             ; Auto-Generated Megafunction            ; C:/Users/Albert/Dropbox/School/ECE 2031/FantasticFive/quartus/db/mult_j2n.tdf           ;
 ; lpm_constant.tdf                 ; yes             ; Megafunction                           ; c:/altera/91sp2/quartus/libraries/megafunctions/lpm_constant.tdf                        ;
 ; db/altsyncram_06l3.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/Albert/Dropbox/School/ECE 2031/FantasticFive/quartus/db/altsyncram_06l3.tdf    ;
-; SIN_table.mif                    ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/Albert/Dropbox/School/ECE 2031/FantasticFive/quartus/SIN_table.mif             ;
+; sin_table.mif                    ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/Albert/Dropbox/School/ECE 2031/FantasticFive/quartus/sin_table.mif             ;
 ; db/altsyncram_r5l3.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/Albert/Dropbox/School/ECE 2031/FantasticFive/quartus/db/altsyncram_r5l3.tdf    ;
-; COS_table.mif                    ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/Albert/Dropbox/School/ECE 2031/FantasticFive/quartus/COS_table.mif             ;
+; cos_table.mif                    ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/Albert/Dropbox/School/ECE 2031/FantasticFive/quartus/cos_table.mif             ;
 ; db/mult_h3o.tdf                  ; yes             ; Auto-Generated Megafunction            ; C:/Users/Albert/Dropbox/School/ECE 2031/FantasticFive/quartus/db/mult_h3o.tdf           ;
 ; multcore.tdf                     ; yes             ; Megafunction                           ; c:/altera/91sp2/quartus/libraries/megafunctions/multcore.tdf                            ;
 ; mpar_add.tdf                     ; yes             ; Megafunction                           ; c:/altera/91sp2/quartus/libraries/megafunctions/mpar_add.tdf                            ;
@@ -370,7 +370,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; db/cmpr_a2i.tdf                  ; yes             ; Auto-Generated Megafunction            ; C:/Users/Albert/Dropbox/School/ECE 2031/FantasticFive/quartus/db/cmpr_a2i.tdf           ;
 ; lpm_shiftreg.tdf                 ; yes             ; Megafunction                           ; c:/altera/91sp2/quartus/libraries/megafunctions/lpm_shiftreg.tdf                        ;
 ; db/altsyncram_koa1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/Albert/Dropbox/School/ECE 2031/FantasticFive/quartus/db/altsyncram_koa1.tdf    ;
-; SOUND.mif                        ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/Albert/Dropbox/School/ECE 2031/FantasticFive/quartus/SOUND.mif                 ;
+; sound.mif                        ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/Albert/Dropbox/School/ECE 2031/FantasticFive/quartus/sound.mif                 ;
 ; db/add_sub_dkh.tdf               ; yes             ; Auto-Generated Megafunction            ; C:/Users/Albert/Dropbox/School/ECE 2031/FantasticFive/quartus/db/add_sub_dkh.tdf        ;
 ; db/mult_m3t.tdf                  ; yes             ; Auto-Generated Megafunction            ; C:/Users/Albert/Dropbox/School/ECE 2031/FantasticFive/quartus/db/mult_m3t.tdf           ;
 ; db/mult_q3t.tdf                  ; yes             ; Auto-Generated Megafunction            ; C:/Users/Albert/Dropbox/School/ECE 2031/FantasticFive/quartus/db/mult_q3t.tdf           ;
@@ -391,20 +391,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+--------------------------------------------+
 ; Resource                                    ; Usage                                      ;
 +---------------------------------------------+--------------------------------------------+
-; Estimated Total logic elements              ; 4,903                                      ;
+; Estimated Total logic elements              ; 5,181                                      ;
 ;                                             ;                                            ;
-; Total combinational functions               ; 4291                                       ;
+; Total combinational functions               ; 4579                                       ;
 ; Logic element usage by number of LUT inputs ;                                            ;
-;     -- 4 input functions                    ; 1621                                       ;
-;     -- 3 input functions                    ; 1504                                       ;
-;     -- <=2 input functions                  ; 1166                                       ;
+;     -- 4 input functions                    ; 1835                                       ;
+;     -- 3 input functions                    ; 1592                                       ;
+;     -- <=2 input functions                  ; 1152                                       ;
 ;                                             ;                                            ;
 ; Logic elements by mode                      ;                                            ;
-;     -- normal mode                          ; 2821                                       ;
-;     -- arithmetic mode                      ; 1470                                       ;
+;     -- normal mode                          ; 3100                                       ;
+;     -- arithmetic mode                      ; 1479                                       ;
 ;                                             ;                                            ;
-; Total registers                             ; 1964                                       ;
-;     -- Dedicated logic registers            ; 1964                                       ;
+; Total registers                             ; 2078                                       ;
+;     -- Dedicated logic registers            ; 2078                                       ;
 ;     -- I/O registers                        ; 0                                          ;
 ;                                             ;                                            ;
 ; I/O pins                                    ; 183                                        ;
@@ -412,9 +412,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Embedded Multiplier 9-bit elements          ; 42                                         ;
 ; Total PLLs                                  ; 2                                          ;
 ; Maximum fan-out node                        ; altpll0:inst|altpll:altpll_component|_clk0 ;
-; Maximum fan-out                             ; 1025                                       ;
-; Total fan-out                               ; 21095                                      ;
-; Average fan-out                             ; 3.21                                       ;
+; Maximum fan-out                             ; 1140                                       ;
+; Total fan-out                               ; 22611                                      ;
+; Average fan-out                             ; 3.25                                       ;
 +---------------------------------------------+--------------------------------------------+
 
 
@@ -423,7 +423,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                        ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                     ; Library Name ;
 +---------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |DE2bot                                           ; 4291 (13)         ; 1964 (0)     ; 90752       ; 42           ; 2       ; 20        ; 183  ; 0            ; |DE2bot                                                                                                                                                 ; work         ;
+; |DE2bot                                           ; 4579 (13)         ; 2078 (0)     ; 90752       ; 42           ; 2       ; 20        ; 183  ; 0            ; |DE2bot                                                                                                                                                 ; work         ;
 ;    |ACC_CLK_GEN:inst60|                           ; 112 (112)         ; 94 (94)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|ACC_CLK_GEN:inst60                                                                                                                              ;              ;
 ;    |CTIMER:inst21|                                ; 34 (34)           ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|CTIMER:inst21                                                                                                                                   ;              ;
 ;    |DAC_BEEP:inst45|                              ; 40 (1)            ; 42 (0)       ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|DAC_BEEP:inst45                                                                                                                                 ;              ;
@@ -441,18 +441,18 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;          |lpm_shiftreg:lpm_shiftreg_component|    ; 32 (32)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|DAC_BEEP:inst45|lpm_shiftreg_db0:inst6|lpm_shiftreg:lpm_shiftreg_component                                                                      ;              ;
 ;    |DIG_IN:inst5|                                 ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|DIG_IN:inst5                                                                                                                                    ;              ;
 ;    |DIG_IN:inst6|                                 ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|DIG_IN:inst6                                                                                                                                    ;              ;
-;    |I2C_INTERFACE:inst16|                         ; 297 (141)         ; 125 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|I2C_INTERFACE:inst16                                                                                                                            ;              ;
+;    |I2C_INTERFACE:inst16|                         ; 310 (154)         ; 125 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|I2C_INTERFACE:inst16                                                                                                                            ;              ;
 ;       |i2c_ctrl:inst14|                           ; 58 (58)           ; 70 (70)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|I2C_INTERFACE:inst16|i2c_ctrl:inst14                                                                                                            ;              ;
 ;       |i2c_master:inst|                           ; 98 (98)           ; 55 (55)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|I2C_INTERFACE:inst16|i2c_master:inst                                                                                                            ;              ;
 ;    |IO_DECODER:inst24|                            ; 17 (17)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|IO_DECODER:inst24                                                                                                                               ;              ;
-;    |LEDS:inst58|                                  ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|LEDS:inst58                                                                                                                                     ;              ;
-;    |LEDS:inst59|                                  ; 0 (0)             ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|LEDS:inst59                                                                                                                                     ; work         ;
-;    |ODOMETRY:inst53|                              ; 451 (135)         ; 129 (129)    ; 65536       ; 4            ; 0       ; 2         ; 0    ; 0            ; |DE2bot|ODOMETRY:inst53                                                                                                                                 ;              ;
+;    |LEDS:inst58|                                  ; 0 (0)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|LEDS:inst58                                                                                                                                     ; work         ;
+;    |LEDS:inst59|                                  ; 0 (0)             ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|LEDS:inst59                                                                                                                                     ;              ;
+;    |ODOMETRY:inst53|                              ; 450 (135)         ; 129 (129)    ; 65536       ; 4            ; 0       ; 2         ; 0    ; 0            ; |DE2bot|ODOMETRY:inst53                                                                                                                                 ;              ;
 ;       |altsyncram:COS_LUT|                        ; 0 (0)             ; 0 (0)        ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|ODOMETRY:inst53|altsyncram:COS_LUT                                                                                                              ;              ;
 ;          |altsyncram_r5l3:auto_generated|         ; 0 (0)             ; 0 (0)        ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|ODOMETRY:inst53|altsyncram:COS_LUT|altsyncram_r5l3:auto_generated                                                                               ;              ;
 ;       |altsyncram:SIN_LUT|                        ; 0 (0)             ; 0 (0)        ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|ODOMETRY:inst53|altsyncram:SIN_LUT                                                                                                              ;              ;
 ;          |altsyncram_06l3:auto_generated|         ; 0 (0)             ; 0 (0)        ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|ODOMETRY:inst53|altsyncram:SIN_LUT|altsyncram_06l3:auto_generated                                                                               ;              ;
-;       |lpm_bustri:IO_BUS|                         ; 27 (27)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|ODOMETRY:inst53|lpm_bustri:IO_BUS                                                                                                               ;              ;
+;       |lpm_bustri:IO_BUS|                         ; 26 (26)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|ODOMETRY:inst53|lpm_bustri:IO_BUS                                                                                                               ;              ;
 ;       |lpm_divide:Mod0|                           ; 270 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|ODOMETRY:inst53|lpm_divide:Mod0                                                                                                                 ;              ;
 ;          |lpm_divide_ulo:auto_generated|          ; 270 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|ODOMETRY:inst53|lpm_divide:Mod0|lpm_divide_ulo:auto_generated                                                                                   ;              ;
 ;             |abs_divider_8dg:divider|             ; 270 (22)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|ODOMETRY:inst53|lpm_divide:Mod0|lpm_divide_ulo:auto_generated|abs_divider_8dg:divider                                                           ;              ;
@@ -486,7 +486,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;          |lpm_mult_oe0:inst18|                    ; 5 (0)             ; 0 (0)        ; 0           ; 3            ; 1       ; 1         ; 0    ; 0            ; |DE2bot|OPTICAL_ENCODER:inst22|POSN_VEL:inst|lpm_mult_oe0:inst18                                                                                        ;              ;
 ;             |lpm_mult:lpm_mult_component|         ; 5 (0)             ; 0 (0)        ; 0           ; 3            ; 1       ; 1         ; 0    ; 0            ; |DE2bot|OPTICAL_ENCODER:inst22|POSN_VEL:inst|lpm_mult_oe0:inst18|lpm_mult:lpm_mult_component                                                            ;              ;
 ;                |mult_j2n:auto_generated|          ; 5 (5)             ; 0 (0)        ; 0           ; 3            ; 1       ; 1         ; 0    ; 0            ; |DE2bot|OPTICAL_ENCODER:inst22|POSN_VEL:inst|lpm_mult_oe0:inst18|lpm_mult:lpm_mult_component|mult_j2n:auto_generated                                    ;              ;
-;    |OPTICAL_ENCODER:inst27|                       ; 81 (3)            ; 97 (0)       ; 0           ; 3            ; 1       ; 1         ; 0    ; 0            ; |DE2bot|OPTICAL_ENCODER:inst27                                                                                                                          ;              ;
+;    |OPTICAL_ENCODER:inst27|                       ; 74 (3)            ; 97 (0)       ; 0           ; 3            ; 1       ; 1         ; 0    ; 0            ; |DE2bot|OPTICAL_ENCODER:inst27                                                                                                                          ;              ;
 ;       |POSN_VEL:inst|                             ; 69 (0)            ; 97 (0)       ; 0           ; 3            ; 1       ; 1         ; 0    ; 0            ; |DE2bot|OPTICAL_ENCODER:inst27|POSN_VEL:inst                                                                                                            ;              ;
 ;          |QUADRATURE_DECODE:inst|                 ; 5 (5)             ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|OPTICAL_ENCODER:inst27|POSN_VEL:inst|QUADRATURE_DECODE:inst                                                                                     ;              ;
 ;          |lpm_add_sub_oe0:inst15|                 ; 27 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|OPTICAL_ENCODER:inst27|POSN_VEL:inst|lpm_add_sub_oe0:inst15                                                                                     ;              ;
@@ -502,14 +502,12 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;          |lpm_mult_oe0:inst18|                    ; 5 (0)             ; 0 (0)        ; 0           ; 3            ; 1       ; 1         ; 0    ; 0            ; |DE2bot|OPTICAL_ENCODER:inst27|POSN_VEL:inst|lpm_mult_oe0:inst18                                                                                        ;              ;
 ;             |lpm_mult:lpm_mult_component|         ; 5 (0)             ; 0 (0)        ; 0           ; 3            ; 1       ; 1         ; 0    ; 0            ; |DE2bot|OPTICAL_ENCODER:inst27|POSN_VEL:inst|lpm_mult_oe0:inst18|lpm_mult:lpm_mult_component                                                            ;              ;
 ;                |mult_j2n:auto_generated|          ; 5 (5)             ; 0 (0)        ; 0           ; 3            ; 1       ; 1         ; 0    ; 0            ; |DE2bot|OPTICAL_ENCODER:inst27|POSN_VEL:inst|lpm_mult_oe0:inst18|lpm_mult:lpm_mult_component|mult_j2n:auto_generated                                    ;              ;
-;       |lpm_bustri_oe0:inst4|                      ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|OPTICAL_ENCODER:inst27|lpm_bustri_oe0:inst4                                                                                                     ;              ;
-;          |lpm_bustri:lpm_bustri_component|        ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|OPTICAL_ENCODER:inst27|lpm_bustri_oe0:inst4|lpm_bustri:lpm_bustri_component                                                                     ;              ;
-;       |lpm_bustri_oe0:inst6|                      ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|OPTICAL_ENCODER:inst27|lpm_bustri_oe0:inst6                                                                                                     ;              ;
-;          |lpm_bustri:lpm_bustri_component|        ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|OPTICAL_ENCODER:inst27|lpm_bustri_oe0:inst6|lpm_bustri:lpm_bustri_component                                                                     ;              ;
-;    |QUAD_HEX:inst56|                              ; 28 (0)            ; 16 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|QUAD_HEX:inst56                                                                                                                                 ;              ;
-;       |HEX_DISP:inst15|                           ; 7 (7)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|QUAD_HEX:inst56|HEX_DISP:inst15                                                                                                                 ;              ;
+;       |lpm_bustri_oe0:inst4|                      ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|OPTICAL_ENCODER:inst27|lpm_bustri_oe0:inst4                                                                                                     ;              ;
+;          |lpm_bustri:lpm_bustri_component|        ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|OPTICAL_ENCODER:inst27|lpm_bustri_oe0:inst4|lpm_bustri:lpm_bustri_component                                                                     ;              ;
+;    |QUAD_HEX:inst56|                              ; 28 (0)            ; 16 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|QUAD_HEX:inst56                                                                                                                                 ; work         ;
+;       |HEX_DISP:inst15|                           ; 7 (7)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|QUAD_HEX:inst56|HEX_DISP:inst15                                                                                                                 ; work         ;
 ;       |HEX_DISP:inst21|                           ; 7 (7)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|QUAD_HEX:inst56|HEX_DISP:inst21                                                                                                                 ; work         ;
-;       |HEX_DISP:inst22|                           ; 7 (7)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|QUAD_HEX:inst56|HEX_DISP:inst22                                                                                                                 ;              ;
+;       |HEX_DISP:inst22|                           ; 7 (7)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|QUAD_HEX:inst56|HEX_DISP:inst22                                                                                                                 ; work         ;
 ;       |HEX_DISP:inst27|                           ; 7 (7)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|QUAD_HEX:inst56|HEX_DISP:inst27                                                                                                                 ; work         ;
 ;    |QUAD_HEX:inst57|                              ; 28 (0)            ; 16 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|QUAD_HEX:inst57                                                                                                                                 ;              ;
 ;       |HEX_DISP:inst15|                           ; 7 (7)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|QUAD_HEX:inst57|HEX_DISP:inst15                                                                                                                 ; work         ;
@@ -517,22 +515,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;       |HEX_DISP:inst22|                           ; 7 (7)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|QUAD_HEX:inst57|HEX_DISP:inst22                                                                                                                 ;              ;
 ;       |HEX_DISP:inst27|                           ; 7 (7)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|QUAD_HEX:inst57|HEX_DISP:inst27                                                                                                                 ;              ;
 ;    |SAFETY_ENABLE:inst4|                          ; 1 (1)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|SAFETY_ENABLE:inst4                                                                                                                             ;              ;
-;    |SCOMP:inst8|                                  ; 499 (409)         ; 194 (194)    ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|SCOMP:inst8                                                                                                                                     ;              ;
+;    |SCOMP:inst8|                                  ; 797 (706)         ; 308 (308)    ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|SCOMP:inst8                                                                                                                                     ;              ;
 ;       |altsyncram:MEMORY|                         ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|SCOMP:inst8|altsyncram:MEMORY                                                                                                                   ;              ;
-;          |altsyncram_kcu3:auto_generated|         ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|SCOMP:inst8|altsyncram:MEMORY|altsyncram_kcu3:auto_generated                                                                                    ;              ;
+;          |altsyncram_63t3:auto_generated|         ; 0 (0)             ; 0 (0)        ; 16384       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|SCOMP:inst8|altsyncram:MEMORY|altsyncram_63t3:auto_generated                                                                                    ;              ;
 ;       |lpm_bustri:IO_BUS|                         ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|SCOMP:inst8|lpm_bustri:IO_BUS                                                                                                                   ;              ;
-;       |lpm_clshift:SHIFTER|                       ; 83 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|SCOMP:inst8|lpm_clshift:SHIFTER                                                                                                                 ;              ;
-;          |lpm_clshift_fuc:auto_generated|         ; 83 (83)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|SCOMP:inst8|lpm_clshift:SHIFTER|lpm_clshift_fuc:auto_generated                                                                                  ;              ;
+;       |lpm_clshift:SHIFTER|                       ; 84 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|SCOMP:inst8|lpm_clshift:SHIFTER                                                                                                                 ;              ;
+;          |lpm_clshift_fuc:auto_generated|         ; 84 (84)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|SCOMP:inst8|lpm_clshift:SHIFTER|lpm_clshift_fuc:auto_generated                                                                                  ;              ;
 ;    |SLCD:inst55|                                  ; 85 (85)           ; 49 (49)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|SLCD:inst55                                                                                                                                     ;              ;
-;    |SONAR:inst54|                                 ; 633 (610)         ; 344 (344)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|SONAR:inst54                                                                                                                                    ;              ;
-;       |lpm_bustri:IO_BUS|                         ; 23 (23)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|SONAR:inst54|lpm_bustri:IO_BUS                                                                                                                  ;              ;
-;    |TIMER:inst20|                                 ; 28 (19)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|TIMER:inst20                                                                                                                                    ;              ;
-;       |lpm_bustri:IO_BUS|                         ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|TIMER:inst20|lpm_bustri:IO_BUS                                                                                                                  ;              ;
-;    |UART_INTERFACE:inst1|                         ; 242 (6)           ; 249 (0)      ; 640         ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|UART_INTERFACE:inst1                                                                                                                            ;              ;
+;    |SONAR:inst54|                                 ; 630 (614)         ; 344 (344)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|SONAR:inst54                                                                                                                                    ;              ;
+;       |lpm_bustri:IO_BUS|                         ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|SONAR:inst54|lpm_bustri:IO_BUS                                                                                                                  ;              ;
+;    |TIMER:inst20|                                 ; 20 (19)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|TIMER:inst20                                                                                                                                    ;              ;
+;       |lpm_bustri:IO_BUS|                         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|TIMER:inst20|lpm_bustri:IO_BUS                                                                                                                  ;              ;
+;    |UART_INTERFACE:inst1|                         ; 235 (5)           ; 249 (0)      ; 640         ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|UART_INTERFACE:inst1                                                                                                                            ;              ;
 ;       |UART:inst2|                                ; 70 (70)           ; 53 (53)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|UART_INTERFACE:inst1|UART:inst2                                                                                                                 ;              ;
 ;       |UART_LIMITER:inst11|                       ; 29 (29)           ; 23 (23)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|UART_INTERFACE:inst1|UART_LIMITER:inst11                                                                                                        ;              ;
-;       |lpm_bustri_uart0:inst10|                   ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|UART_INTERFACE:inst1|lpm_bustri_uart0:inst10                                                                                                    ;              ;
-;          |lpm_bustri:lpm_bustri_component|        ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|UART_INTERFACE:inst1|lpm_bustri_uart0:inst10|lpm_bustri:lpm_bustri_component                                                                    ;              ;
 ;       |lpm_dff_uart0:inst15|                      ; 6 (0)             ; 7 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|UART_INTERFACE:inst1|lpm_dff_uart0:inst15                                                                                                       ;              ;
 ;          |lpm_ff:lpm_ff_component|                ; 6 (6)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|UART_INTERFACE:inst1|lpm_dff_uart0:inst15|lpm_ff:lpm_ff_component                                                                               ;              ;
 ;       |lpm_dff_uart0:inst4|                       ; 0 (0)             ; 9 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|UART_INTERFACE:inst1|lpm_dff_uart0:inst4                                                                                                        ;              ;
@@ -573,7 +569,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;                |mux_1u7:rdemp_eq_comp_msb_mux|    ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|UART_INTERFACE:inst1|uart_dcfifo_out:inst14|dcfifo:dcfifo_component|dcfifo_31m1:auto_generated|mux_1u7:rdemp_eq_comp_msb_mux                    ;              ;
 ;                |mux_1u7:wrfull_eq_comp_lsb_mux|   ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|UART_INTERFACE:inst1|uart_dcfifo_out:inst14|dcfifo:dcfifo_component|dcfifo_31m1:auto_generated|mux_1u7:wrfull_eq_comp_lsb_mux                   ;              ;
 ;                |mux_1u7:wrfull_eq_comp_msb_mux|   ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|UART_INTERFACE:inst1|uart_dcfifo_out:inst14|dcfifo:dcfifo_component|dcfifo_31m1:auto_generated|mux_1u7:wrfull_eq_comp_msb_mux                   ;              ;
-;    |VEL_CONTROL:inst51|                           ; 779 (668)         ; 180 (168)    ; 0           ; 16           ; 0       ; 8         ; 0    ; 0            ; |DE2bot|VEL_CONTROL:inst51                                                                                                                              ;              ;
+;    |VEL_CONTROL:inst51|                           ; 780 (669)         ; 180 (168)    ; 0           ; 16           ; 0       ; 8         ; 0    ; 0            ; |DE2bot|VEL_CONTROL:inst51                                                                                                                              ;              ;
 ;       |lpm_compare:compare|                       ; 20 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|VEL_CONTROL:inst51|lpm_compare:compare                                                                                                          ;              ;
 ;          |cmpr_a2i:auto_generated|                ; 20 (20)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|VEL_CONTROL:inst51|lpm_compare:compare|cmpr_a2i:auto_generated                                                                                  ;              ;
 ;       |lpm_counter:counter|                       ; 12 (0)            ; 12 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|VEL_CONTROL:inst51|lpm_counter:counter                                                                                                          ;              ;
@@ -586,7 +582,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;          |mult_m3t:auto_generated|                ; 24 (24)           ; 0 (0)        ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |DE2bot|VEL_CONTROL:inst51|lpm_mult:Mult2|mult_m3t:auto_generated                                                                                       ;              ;
 ;       |lpm_mult:Mult3|                            ; 17 (0)            ; 0 (0)        ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |DE2bot|VEL_CONTROL:inst51|lpm_mult:Mult3                                                                                                               ;              ;
 ;          |mult_25t:auto_generated|                ; 17 (17)           ; 0 (0)        ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |DE2bot|VEL_CONTROL:inst51|lpm_mult:Mult3|mult_25t:auto_generated                                                                                       ;              ;
-;    |VEL_CONTROL:inst52|                           ; 759 (648)         ; 177 (165)    ; 0           ; 16           ; 0       ; 8         ; 0    ; 0            ; |DE2bot|VEL_CONTROL:inst52                                                                                                                              ;              ;
+;    |VEL_CONTROL:inst52|                           ; 761 (650)         ; 177 (165)    ; 0           ; 16           ; 0       ; 8         ; 0    ; 0            ; |DE2bot|VEL_CONTROL:inst52                                                                                                                              ;              ;
 ;       |lpm_compare:compare|                       ; 20 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|VEL_CONTROL:inst52|lpm_compare:compare                                                                                                          ;              ;
 ;          |cmpr_a2i:auto_generated|                ; 20 (20)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|VEL_CONTROL:inst52|lpm_compare:compare|cmpr_a2i:auto_generated                                                                                  ;              ;
 ;       |lpm_counter:counter|                       ; 12 (0)            ; 12 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2bot|VEL_CONTROL:inst52|lpm_counter:counter                                                                                                          ;              ;
@@ -610,18 +606,18 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                         ;
-+-----------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+------------------------+
-; Name                                                                                                                              ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF                    ;
-+-----------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+------------------------+
-; DAC_BEEP:inst45|altsyncram_db0:inst8|altsyncram:altsyncram_component|altsyncram_koa1:auto_generated|ALTSYNCRAM                    ; AUTO ; ROM              ; 512          ; 16           ; --           ; --           ; 8192  ; SOUND.mif              ;
-; ODOMETRY:inst53|altsyncram:COS_LUT|altsyncram_r5l3:auto_generated|ALTSYNCRAM                                                      ; AUTO ; ROM              ; 2048         ; 16           ; --           ; --           ; 32768 ; COS_table.mif          ;
-; ODOMETRY:inst53|altsyncram:SIN_LUT|altsyncram_06l3:auto_generated|ALTSYNCRAM                                                      ; AUTO ; ROM              ; 2048         ; 16           ; --           ; --           ; 32768 ; SIN_table.mif          ;
-; SCOMP:inst8|altsyncram:MEMORY|altsyncram_kcu3:auto_generated|ALTSYNCRAM                                                           ; AUTO ; Single Port      ; 1024         ; 16           ; --           ; --           ; 16384 ; SimpleRobotProgram.mif ;
-; UART_INTERFACE:inst1|uart_dcfifo_in:inst8|dcfifo:dcfifo_component|dcfifo_qtl1:auto_generated|altsyncram_7hu:fifo_ram|ALTSYNCRAM   ; AUTO ; Simple Dual Port ; 16           ; 8            ; 16           ; 8            ; 128   ; None                   ;
-; UART_INTERFACE:inst1|uart_dcfifo_out:inst14|dcfifo:dcfifo_component|dcfifo_31m1:auto_generated|altsyncram_bhu:fifo_ram|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 64           ; 8            ; 64           ; 8            ; 512   ; None                   ;
-+-----------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                ;
++-----------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+---------------+
+; Name                                                                                                                              ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF           ;
++-----------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+---------------+
+; DAC_BEEP:inst45|altsyncram_db0:inst8|altsyncram:altsyncram_component|altsyncram_koa1:auto_generated|ALTSYNCRAM                    ; AUTO ; ROM              ; 512          ; 16           ; --           ; --           ; 8192  ; SOUND.mif     ;
+; ODOMETRY:inst53|altsyncram:COS_LUT|altsyncram_r5l3:auto_generated|ALTSYNCRAM                                                      ; AUTO ; ROM              ; 2048         ; 16           ; --           ; --           ; 32768 ; COS_table.mif ;
+; ODOMETRY:inst53|altsyncram:SIN_LUT|altsyncram_06l3:auto_generated|ALTSYNCRAM                                                      ; AUTO ; ROM              ; 2048         ; 16           ; --           ; --           ; 32768 ; SIN_table.mif ;
+; SCOMP:inst8|altsyncram:MEMORY|altsyncram_63t3:auto_generated|ALTSYNCRAM                                                           ; AUTO ; Single Port      ; 1024         ; 16           ; --           ; --           ; 16384 ; albert.mif    ;
+; UART_INTERFACE:inst1|uart_dcfifo_in:inst8|dcfifo:dcfifo_component|dcfifo_qtl1:auto_generated|altsyncram_7hu:fifo_ram|ALTSYNCRAM   ; AUTO ; Simple Dual Port ; 16           ; 8            ; 16           ; 8            ; 128   ; None          ;
+; UART_INTERFACE:inst1|uart_dcfifo_out:inst14|dcfifo:dcfifo_component|dcfifo_31m1:auto_generated|altsyncram_bhu:fifo_ram|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 64           ; 8            ; 64           ; 8            ; 512   ; None          ;
++-----------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+---------------+
 
 
 +-----------------------------------------------------+
@@ -737,38 +733,41 @@ Encoding Type:  One-Hot
 
 
 Encoding Type:  One-Hot
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |DE2bot|SCOMP:inst8|STATE                                                                                                                                                                                                                                                                                                                                                                                                       ;
-+-----------------+---------------+----------------+---------------+--------------+-------------+-----------------+---------------+-----------------+----------------+---------------+----------------+--------------+-------------+--------------+----------------+---------------+---------------+---------------+--------------+--------------+-----------------+----------------+---------------+--------------+-------------+----------------+
-; Name            ; STATE.EX_RETI ; STATE.EX_LOADI ; STATE.EX_OUT2 ; STATE.EX_OUT ; STATE.EX_IN ; STATE.EX_RETURN ; STATE.EX_CALL ; STATE.EX_ISTORE ; STATE.EX_ILOAD ; STATE.EX_ADDI ; STATE.EX_SHIFT ; STATE.EX_XOR ; STATE.EX_OR ; STATE.EX_AND ; STATE.EX_JZERO ; STATE.EX_JPOS ; STATE.EX_JNEG ; STATE.EX_JUMP ; STATE.EX_SUB ; STATE.EX_ADD ; STATE.EX_STORE2 ; STATE.EX_STORE ; STATE.EX_LOAD ; STATE.DECODE ; STATE.FETCH ; STATE.RESET_PC ;
-+-----------------+---------------+----------------+---------------+--------------+-------------+-----------------+---------------+-----------------+----------------+---------------+----------------+--------------+-------------+--------------+----------------+---------------+---------------+---------------+--------------+--------------+-----------------+----------------+---------------+--------------+-------------+----------------+
-; STATE.RESET_PC  ; 0             ; 0              ; 0             ; 0            ; 0           ; 0               ; 0             ; 0               ; 0              ; 0             ; 0              ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0             ; 0            ; 0            ; 0               ; 0              ; 0             ; 0            ; 0           ; 0              ;
-; STATE.FETCH     ; 0             ; 0              ; 0             ; 0            ; 0           ; 0               ; 0             ; 0               ; 0              ; 0             ; 0              ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0             ; 0            ; 0            ; 0               ; 0              ; 0             ; 0            ; 1           ; 1              ;
-; STATE.DECODE    ; 0             ; 0              ; 0             ; 0            ; 0           ; 0               ; 0             ; 0               ; 0              ; 0             ; 0              ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0             ; 0            ; 0            ; 0               ; 0              ; 0             ; 1            ; 0           ; 1              ;
-; STATE.EX_LOAD   ; 0             ; 0              ; 0             ; 0            ; 0           ; 0               ; 0             ; 0               ; 0              ; 0             ; 0              ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0             ; 0            ; 0            ; 0               ; 0              ; 1             ; 0            ; 0           ; 1              ;
-; STATE.EX_STORE  ; 0             ; 0              ; 0             ; 0            ; 0           ; 0               ; 0             ; 0               ; 0              ; 0             ; 0              ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0             ; 0            ; 0            ; 0               ; 1              ; 0             ; 0            ; 0           ; 1              ;
-; STATE.EX_STORE2 ; 0             ; 0              ; 0             ; 0            ; 0           ; 0               ; 0             ; 0               ; 0              ; 0             ; 0              ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0             ; 0            ; 0            ; 1               ; 0              ; 0             ; 0            ; 0           ; 1              ;
-; STATE.EX_ADD    ; 0             ; 0              ; 0             ; 0            ; 0           ; 0               ; 0             ; 0               ; 0              ; 0             ; 0              ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0             ; 0            ; 1            ; 0               ; 0              ; 0             ; 0            ; 0           ; 1              ;
-; STATE.EX_SUB    ; 0             ; 0              ; 0             ; 0            ; 0           ; 0               ; 0             ; 0               ; 0              ; 0             ; 0              ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0             ; 1            ; 0            ; 0               ; 0              ; 0             ; 0            ; 0           ; 1              ;
-; STATE.EX_JUMP   ; 0             ; 0              ; 0             ; 0            ; 0           ; 0               ; 0             ; 0               ; 0              ; 0             ; 0              ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 1             ; 0            ; 0            ; 0               ; 0              ; 0             ; 0            ; 0           ; 1              ;
-; STATE.EX_JNEG   ; 0             ; 0              ; 0             ; 0            ; 0           ; 0               ; 0             ; 0               ; 0              ; 0             ; 0              ; 0            ; 0           ; 0            ; 0              ; 0             ; 1             ; 0             ; 0            ; 0            ; 0               ; 0              ; 0             ; 0            ; 0           ; 1              ;
-; STATE.EX_JPOS   ; 0             ; 0              ; 0             ; 0            ; 0           ; 0               ; 0             ; 0               ; 0              ; 0             ; 0              ; 0            ; 0           ; 0            ; 0              ; 1             ; 0             ; 0             ; 0            ; 0            ; 0               ; 0              ; 0             ; 0            ; 0           ; 1              ;
-; STATE.EX_JZERO  ; 0             ; 0              ; 0             ; 0            ; 0           ; 0               ; 0             ; 0               ; 0              ; 0             ; 0              ; 0            ; 0           ; 0            ; 1              ; 0             ; 0             ; 0             ; 0            ; 0            ; 0               ; 0              ; 0             ; 0            ; 0           ; 1              ;
-; STATE.EX_AND    ; 0             ; 0              ; 0             ; 0            ; 0           ; 0               ; 0             ; 0               ; 0              ; 0             ; 0              ; 0            ; 0           ; 1            ; 0              ; 0             ; 0             ; 0             ; 0            ; 0            ; 0               ; 0              ; 0             ; 0            ; 0           ; 1              ;
-; STATE.EX_OR     ; 0             ; 0              ; 0             ; 0            ; 0           ; 0               ; 0             ; 0               ; 0              ; 0             ; 0              ; 0            ; 1           ; 0            ; 0              ; 0             ; 0             ; 0             ; 0            ; 0            ; 0               ; 0              ; 0             ; 0            ; 0           ; 1              ;
-; STATE.EX_XOR    ; 0             ; 0              ; 0             ; 0            ; 0           ; 0               ; 0             ; 0               ; 0              ; 0             ; 0              ; 1            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0             ; 0            ; 0            ; 0               ; 0              ; 0             ; 0            ; 0           ; 1              ;
-; STATE.EX_SHIFT  ; 0             ; 0              ; 0             ; 0            ; 0           ; 0               ; 0             ; 0               ; 0              ; 0             ; 1              ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0             ; 0            ; 0            ; 0               ; 0              ; 0             ; 0            ; 0           ; 1              ;
-; STATE.EX_ADDI   ; 0             ; 0              ; 0             ; 0            ; 0           ; 0               ; 0             ; 0               ; 0              ; 1             ; 0              ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0             ; 0            ; 0            ; 0               ; 0              ; 0             ; 0            ; 0           ; 1              ;
-; STATE.EX_ILOAD  ; 0             ; 0              ; 0             ; 0            ; 0           ; 0               ; 0             ; 0               ; 1              ; 0             ; 0              ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0             ; 0            ; 0            ; 0               ; 0              ; 0             ; 0            ; 0           ; 1              ;
-; STATE.EX_ISTORE ; 0             ; 0              ; 0             ; 0            ; 0           ; 0               ; 0             ; 1               ; 0              ; 0             ; 0              ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0             ; 0            ; 0            ; 0               ; 0              ; 0             ; 0            ; 0           ; 1              ;
-; STATE.EX_CALL   ; 0             ; 0              ; 0             ; 0            ; 0           ; 0               ; 1             ; 0               ; 0              ; 0             ; 0              ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0             ; 0            ; 0            ; 0               ; 0              ; 0             ; 0            ; 0           ; 1              ;
-; STATE.EX_RETURN ; 0             ; 0              ; 0             ; 0            ; 0           ; 1               ; 0             ; 0               ; 0              ; 0             ; 0              ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0             ; 0            ; 0            ; 0               ; 0              ; 0             ; 0            ; 0           ; 1              ;
-; STATE.EX_IN     ; 0             ; 0              ; 0             ; 0            ; 1           ; 0               ; 0             ; 0               ; 0              ; 0             ; 0              ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0             ; 0            ; 0            ; 0               ; 0              ; 0             ; 0            ; 0           ; 1              ;
-; STATE.EX_OUT    ; 0             ; 0              ; 0             ; 1            ; 0           ; 0               ; 0             ; 0               ; 0              ; 0             ; 0              ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0             ; 0            ; 0            ; 0               ; 0              ; 0             ; 0            ; 0           ; 1              ;
-; STATE.EX_OUT2   ; 0             ; 0              ; 1             ; 0            ; 0           ; 0               ; 0             ; 0               ; 0              ; 0             ; 0              ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0             ; 0            ; 0            ; 0               ; 0              ; 0             ; 0            ; 0           ; 1              ;
-; STATE.EX_LOADI  ; 0             ; 1              ; 0             ; 0            ; 0           ; 0               ; 0             ; 0               ; 0              ; 0             ; 0              ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0             ; 0            ; 0            ; 0               ; 0              ; 0             ; 0            ; 0           ; 1              ;
-; STATE.EX_RETI   ; 1             ; 0              ; 0             ; 0            ; 0           ; 0               ; 0             ; 0               ; 0              ; 0             ; 0              ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0             ; 0            ; 0            ; 0               ; 0              ; 0             ; 0            ; 0           ; 1              ;
-+-----------------+---------------+----------------+---------------+--------------+-------------+-----------------+---------------+-----------------+----------------+---------------+----------------+--------------+-------------+--------------+----------------+---------------+---------------+---------------+--------------+--------------+-----------------+----------------+---------------+--------------+-------------+----------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |DE2bot|SCOMP:inst8|STATE                                                                                                                                                                                                                                                                                                                                                                                                                                                              ;
++------------------+------------------+-----------------+----------------+---------------+----------------+---------------+--------------+-------------+-----------------+---------------+-----------------+----------------+---------------+----------------+--------------+-------------+--------------+----------------+---------------+---------------+---------------+--------------+--------------+-----------------+----------------+---------------+--------------+-------------+----------------+
+; Name             ; STATE.EX_SWITCH2 ; STATE.EX_SWITCH ; STATE.EX_LOADA ; STATE.EX_RETI ; STATE.EX_LOADI ; STATE.EX_OUT2 ; STATE.EX_OUT ; STATE.EX_IN ; STATE.EX_RETURN ; STATE.EX_CALL ; STATE.EX_ISTORE ; STATE.EX_ILOAD ; STATE.EX_ADDI ; STATE.EX_SHIFT ; STATE.EX_XOR ; STATE.EX_OR ; STATE.EX_AND ; STATE.EX_JZERO ; STATE.EX_JPOS ; STATE.EX_JNEG ; STATE.EX_JUMP ; STATE.EX_SUB ; STATE.EX_ADD ; STATE.EX_STORE2 ; STATE.EX_STORE ; STATE.EX_LOAD ; STATE.DECODE ; STATE.FETCH ; STATE.RESET_PC ;
++------------------+------------------+-----------------+----------------+---------------+----------------+---------------+--------------+-------------+-----------------+---------------+-----------------+----------------+---------------+----------------+--------------+-------------+--------------+----------------+---------------+---------------+---------------+--------------+--------------+-----------------+----------------+---------------+--------------+-------------+----------------+
+; STATE.RESET_PC   ; 0                ; 0               ; 0              ; 0             ; 0              ; 0             ; 0            ; 0           ; 0               ; 0             ; 0               ; 0              ; 0             ; 0              ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0             ; 0            ; 0            ; 0               ; 0              ; 0             ; 0            ; 0           ; 0              ;
+; STATE.FETCH      ; 0                ; 0               ; 0              ; 0             ; 0              ; 0             ; 0            ; 0           ; 0               ; 0             ; 0               ; 0              ; 0             ; 0              ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0             ; 0            ; 0            ; 0               ; 0              ; 0             ; 0            ; 1           ; 1              ;
+; STATE.DECODE     ; 0                ; 0               ; 0              ; 0             ; 0              ; 0             ; 0            ; 0           ; 0               ; 0             ; 0               ; 0              ; 0             ; 0              ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0             ; 0            ; 0            ; 0               ; 0              ; 0             ; 1            ; 0           ; 1              ;
+; STATE.EX_LOAD    ; 0                ; 0               ; 0              ; 0             ; 0              ; 0             ; 0            ; 0           ; 0               ; 0             ; 0               ; 0              ; 0             ; 0              ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0             ; 0            ; 0            ; 0               ; 0              ; 1             ; 0            ; 0           ; 1              ;
+; STATE.EX_STORE   ; 0                ; 0               ; 0              ; 0             ; 0              ; 0             ; 0            ; 0           ; 0               ; 0             ; 0               ; 0              ; 0             ; 0              ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0             ; 0            ; 0            ; 0               ; 1              ; 0             ; 0            ; 0           ; 1              ;
+; STATE.EX_STORE2  ; 0                ; 0               ; 0              ; 0             ; 0              ; 0             ; 0            ; 0           ; 0               ; 0             ; 0               ; 0              ; 0             ; 0              ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0             ; 0            ; 0            ; 1               ; 0              ; 0             ; 0            ; 0           ; 1              ;
+; STATE.EX_ADD     ; 0                ; 0               ; 0              ; 0             ; 0              ; 0             ; 0            ; 0           ; 0               ; 0             ; 0               ; 0              ; 0             ; 0              ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0             ; 0            ; 1            ; 0               ; 0              ; 0             ; 0            ; 0           ; 1              ;
+; STATE.EX_SUB     ; 0                ; 0               ; 0              ; 0             ; 0              ; 0             ; 0            ; 0           ; 0               ; 0             ; 0               ; 0              ; 0             ; 0              ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0             ; 1            ; 0            ; 0               ; 0              ; 0             ; 0            ; 0           ; 1              ;
+; STATE.EX_JUMP    ; 0                ; 0               ; 0              ; 0             ; 0              ; 0             ; 0            ; 0           ; 0               ; 0             ; 0               ; 0              ; 0             ; 0              ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 1             ; 0            ; 0            ; 0               ; 0              ; 0             ; 0            ; 0           ; 1              ;
+; STATE.EX_JNEG    ; 0                ; 0               ; 0              ; 0             ; 0              ; 0             ; 0            ; 0           ; 0               ; 0             ; 0               ; 0              ; 0             ; 0              ; 0            ; 0           ; 0            ; 0              ; 0             ; 1             ; 0             ; 0            ; 0            ; 0               ; 0              ; 0             ; 0            ; 0           ; 1              ;
+; STATE.EX_JPOS    ; 0                ; 0               ; 0              ; 0             ; 0              ; 0             ; 0            ; 0           ; 0               ; 0             ; 0               ; 0              ; 0             ; 0              ; 0            ; 0           ; 0            ; 0              ; 1             ; 0             ; 0             ; 0            ; 0            ; 0               ; 0              ; 0             ; 0            ; 0           ; 1              ;
+; STATE.EX_JZERO   ; 0                ; 0               ; 0              ; 0             ; 0              ; 0             ; 0            ; 0           ; 0               ; 0             ; 0               ; 0              ; 0             ; 0              ; 0            ; 0           ; 0            ; 1              ; 0             ; 0             ; 0             ; 0            ; 0            ; 0               ; 0              ; 0             ; 0            ; 0           ; 1              ;
+; STATE.EX_AND     ; 0                ; 0               ; 0              ; 0             ; 0              ; 0             ; 0            ; 0           ; 0               ; 0             ; 0               ; 0              ; 0             ; 0              ; 0            ; 0           ; 1            ; 0              ; 0             ; 0             ; 0             ; 0            ; 0            ; 0               ; 0              ; 0             ; 0            ; 0           ; 1              ;
+; STATE.EX_OR      ; 0                ; 0               ; 0              ; 0             ; 0              ; 0             ; 0            ; 0           ; 0               ; 0             ; 0               ; 0              ; 0             ; 0              ; 0            ; 1           ; 0            ; 0              ; 0             ; 0             ; 0             ; 0            ; 0            ; 0               ; 0              ; 0             ; 0            ; 0           ; 1              ;
+; STATE.EX_XOR     ; 0                ; 0               ; 0              ; 0             ; 0              ; 0             ; 0            ; 0           ; 0               ; 0             ; 0               ; 0              ; 0             ; 0              ; 1            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0             ; 0            ; 0            ; 0               ; 0              ; 0             ; 0            ; 0           ; 1              ;
+; STATE.EX_SHIFT   ; 0                ; 0               ; 0              ; 0             ; 0              ; 0             ; 0            ; 0           ; 0               ; 0             ; 0               ; 0              ; 0             ; 1              ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0             ; 0            ; 0            ; 0               ; 0              ; 0             ; 0            ; 0           ; 1              ;
+; STATE.EX_ADDI    ; 0                ; 0               ; 0              ; 0             ; 0              ; 0             ; 0            ; 0           ; 0               ; 0             ; 0               ; 0              ; 1             ; 0              ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0             ; 0            ; 0            ; 0               ; 0              ; 0             ; 0            ; 0           ; 1              ;
+; STATE.EX_ILOAD   ; 0                ; 0               ; 0              ; 0             ; 0              ; 0             ; 0            ; 0           ; 0               ; 0             ; 0               ; 1              ; 0             ; 0              ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0             ; 0            ; 0            ; 0               ; 0              ; 0             ; 0            ; 0           ; 1              ;
+; STATE.EX_ISTORE  ; 0                ; 0               ; 0              ; 0             ; 0              ; 0             ; 0            ; 0           ; 0               ; 0             ; 1               ; 0              ; 0             ; 0              ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0             ; 0            ; 0            ; 0               ; 0              ; 0             ; 0            ; 0           ; 1              ;
+; STATE.EX_CALL    ; 0                ; 0               ; 0              ; 0             ; 0              ; 0             ; 0            ; 0           ; 0               ; 1             ; 0               ; 0              ; 0             ; 0              ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0             ; 0            ; 0            ; 0               ; 0              ; 0             ; 0            ; 0           ; 1              ;
+; STATE.EX_RETURN  ; 0                ; 0               ; 0              ; 0             ; 0              ; 0             ; 0            ; 0           ; 1               ; 0             ; 0               ; 0              ; 0             ; 0              ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0             ; 0            ; 0            ; 0               ; 0              ; 0             ; 0            ; 0           ; 1              ;
+; STATE.EX_IN      ; 0                ; 0               ; 0              ; 0             ; 0              ; 0             ; 0            ; 1           ; 0               ; 0             ; 0               ; 0              ; 0             ; 0              ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0             ; 0            ; 0            ; 0               ; 0              ; 0             ; 0            ; 0           ; 1              ;
+; STATE.EX_OUT     ; 0                ; 0               ; 0              ; 0             ; 0              ; 0             ; 1            ; 0           ; 0               ; 0             ; 0               ; 0              ; 0             ; 0              ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0             ; 0            ; 0            ; 0               ; 0              ; 0             ; 0            ; 0           ; 1              ;
+; STATE.EX_OUT2    ; 0                ; 0               ; 0              ; 0             ; 0              ; 1             ; 0            ; 0           ; 0               ; 0             ; 0               ; 0              ; 0             ; 0              ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0             ; 0            ; 0            ; 0               ; 0              ; 0             ; 0            ; 0           ; 1              ;
+; STATE.EX_LOADI   ; 0                ; 0               ; 0              ; 0             ; 1              ; 0             ; 0            ; 0           ; 0               ; 0             ; 0               ; 0              ; 0             ; 0              ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0             ; 0            ; 0            ; 0               ; 0              ; 0             ; 0            ; 0           ; 1              ;
+; STATE.EX_RETI    ; 0                ; 0               ; 0              ; 1             ; 0              ; 0             ; 0            ; 0           ; 0               ; 0             ; 0               ; 0              ; 0             ; 0              ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0             ; 0            ; 0            ; 0               ; 0              ; 0             ; 0            ; 0           ; 1              ;
+; STATE.EX_LOADA   ; 0                ; 0               ; 1              ; 0             ; 0              ; 0             ; 0            ; 0           ; 0               ; 0             ; 0               ; 0              ; 0             ; 0              ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0             ; 0            ; 0            ; 0               ; 0              ; 0             ; 0            ; 0           ; 1              ;
+; STATE.EX_SWITCH  ; 0                ; 1               ; 0              ; 0             ; 0              ; 0             ; 0            ; 0           ; 0               ; 0             ; 0               ; 0              ; 0             ; 0              ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0             ; 0            ; 0            ; 0               ; 0              ; 0             ; 0            ; 0           ; 1              ;
+; STATE.EX_SWITCH2 ; 1                ; 0               ; 0              ; 0             ; 0              ; 0             ; 0            ; 0           ; 0               ; 0             ; 0               ; 0              ; 0             ; 0              ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0             ; 0            ; 0            ; 0               ; 0              ; 0             ; 0            ; 0           ; 1              ;
++------------------+------------------+-----------------+----------------+---------------+----------------+---------------+--------------+-------------+-----------------+---------------+-----------------+----------------+---------------+----------------+--------------+-------------+--------------+----------------+---------------+---------------+---------------+--------------+--------------+-----------------+----------------+---------------+--------------+-------------+----------------+
 
 
 Encoding Type:  One-Hot
@@ -896,21 +895,21 @@ Encoding Type:  One-Hot
 ; OPTICAL_ENCODER:inst22|POSN_VEL:inst|lpm_dff_oe0:inst10|lpm_ff:lpm_ff_component|dffs[27]                                     ; Lost fanout                                                                   ;
 ; VEL_CONTROL:inst51|CMD_VEL[0]                                                                                                ; Merged with VEL_CONTROL:inst51|CMD_VEL[1]                                     ;
 ; VEL_CONTROL:inst52|CMD_VEL[0]                                                                                                ; Merged with VEL_CONTROL:inst52|CMD_VEL[1]                                     ;
-; SONAR:inst54|SONAR_RESULT[16][9]                                                                                             ; Merged with SONAR:inst54|SONAR_RESULT[17][15]                                 ;
-; SONAR:inst54|SONAR_RESULT[17][8]                                                                                             ; Merged with SONAR:inst54|SONAR_RESULT[17][15]                                 ;
 ; SONAR:inst54|SONAR_RESULT[17][10]                                                                                            ; Merged with SONAR:inst54|SONAR_RESULT[17][15]                                 ;
-; SONAR:inst54|SONAR_RESULT[16][13]                                                                                            ; Merged with SONAR:inst54|SONAR_RESULT[17][15]                                 ;
-; SONAR:inst54|SONAR_RESULT[17][9]                                                                                             ; Merged with SONAR:inst54|SONAR_RESULT[17][15]                                 ;
+; SONAR:inst54|SONAR_RESULT[16][10]                                                                                            ; Merged with SONAR:inst54|SONAR_RESULT[17][15]                                 ;
+; SONAR:inst54|SONAR_RESULT[16][8]                                                                                             ; Merged with SONAR:inst54|SONAR_RESULT[17][15]                                 ;
+; SONAR:inst54|SONAR_RESULT[17][8]                                                                                             ; Merged with SONAR:inst54|SONAR_RESULT[17][15]                                 ;
+; SONAR:inst54|SONAR_RESULT[16][14]                                                                                            ; Merged with SONAR:inst54|SONAR_RESULT[17][15]                                 ;
+; SONAR:inst54|SONAR_RESULT[17][14]                                                                                            ; Merged with SONAR:inst54|SONAR_RESULT[17][15]                                 ;
+; SONAR:inst54|SONAR_RESULT[17][13]                                                                                            ; Merged with SONAR:inst54|SONAR_RESULT[17][15]                                 ;
+; SONAR:inst54|SONAR_RESULT[16][9]                                                                                             ; Merged with SONAR:inst54|SONAR_RESULT[17][15]                                 ;
 ; SONAR:inst54|SONAR_RESULT[16][15]                                                                                            ; Merged with SONAR:inst54|SONAR_RESULT[17][15]                                 ;
-; SONAR:inst54|SONAR_RESULT[16][12]                                                                                            ; Merged with SONAR:inst54|SONAR_RESULT[17][15]                                 ;
-; SONAR:inst54|SONAR_RESULT[16][11]                                                                                            ; Merged with SONAR:inst54|SONAR_RESULT[17][15]                                 ;
+; SONAR:inst54|SONAR_RESULT[17][9]                                                                                             ; Merged with SONAR:inst54|SONAR_RESULT[17][15]                                 ;
 ; SONAR:inst54|SONAR_RESULT[17][11]                                                                                            ; Merged with SONAR:inst54|SONAR_RESULT[17][15]                                 ;
 ; SONAR:inst54|SONAR_RESULT[17][12]                                                                                            ; Merged with SONAR:inst54|SONAR_RESULT[17][15]                                 ;
-; SONAR:inst54|SONAR_RESULT[17][13]                                                                                            ; Merged with SONAR:inst54|SONAR_RESULT[17][15]                                 ;
-; SONAR:inst54|SONAR_RESULT[16][14]                                                                                            ; Merged with SONAR:inst54|SONAR_RESULT[17][15]                                 ;
-; SONAR:inst54|SONAR_RESULT[16][10]                                                                                            ; Merged with SONAR:inst54|SONAR_RESULT[17][15]                                 ;
-; SONAR:inst54|SONAR_RESULT[17][14]                                                                                            ; Merged with SONAR:inst54|SONAR_RESULT[17][15]                                 ;
-; SONAR:inst54|SONAR_RESULT[16][8]                                                                                             ; Merged with SONAR:inst54|SONAR_RESULT[17][15]                                 ;
+; SONAR:inst54|SONAR_RESULT[16][11]                                                                                            ; Merged with SONAR:inst54|SONAR_RESULT[17][15]                                 ;
+; SONAR:inst54|SONAR_RESULT[16][13]                                                                                            ; Merged with SONAR:inst54|SONAR_RESULT[17][15]                                 ;
+; SONAR:inst54|SONAR_RESULT[16][12]                                                                                            ; Merged with SONAR:inst54|SONAR_RESULT[17][15]                                 ;
 ; DAC_BEEP:inst45|lpm_dff_db0:inst2|lpm_ff:lpm_ff_component|dffs[0]                                                            ; Merged with DAC_BEEP:inst45|lpm_dff_db0:inst2|lpm_ff:lpm_ff_component|dffs[1] ;
 ; VEL_CONTROL:inst52|SH_ACK                                                                                                    ; Lost fanout                                                                   ;
 ; VEL_CONTROL:inst51|CMD_VEL[1]                                                                                                ; Stuck at GND due to stuck port data_in                                        ;
@@ -926,6 +925,7 @@ Encoding Type:  One-Hot
 ; oneshot_i2c:inst18|i2c_master:inst|addr_rw[5]                                                                                ; Stuck at VCC due to stuck port data_in                                        ;
 ; oneshot_i2c:inst18|i2c_master:inst|count[2]                                                                                  ; Stuck at GND due to stuck port data_in                                        ;
 ; I2C_INTERFACE:inst16|i2c_master:inst|count[2]                                                                                ; Stuck at GND due to stuck port data_in                                        ;
+; SCOMP:inst8|STATE.EX_SWITCH2                                                                                                 ; Lost fanout                                                                   ;
 ; oneshot_i2c:inst18|i2c_master:inst|state.rd                                                                                  ; Stuck at GND due to stuck port data_in                                        ;
 ; oneshot_i2c:inst18|i2c_master:inst|state.mstr_ack                                                                            ; Stuck at GND due to stuck port data_in                                        ;
 ; oneshot_i2c:inst18|i2c_master:inst|state.restart                                                                             ; Stuck at GND due to stuck port data_in                                        ;
@@ -995,7 +995,7 @@ Encoding Type:  One-Hot
 ; OPTICAL_ENCODER:inst27|POSN_VEL:inst|lpm_dff_oe0:inst12|lpm_ff:lpm_ff_component|dffs[1]                                      ; Lost fanout                                                                   ;
 ; OPTICAL_ENCODER:inst27|POSN_VEL:inst|lpm_dff_oe0:inst14|lpm_ff:lpm_ff_component|dffs[0]                                      ; Lost fanout                                                                   ;
 ; OPTICAL_ENCODER:inst27|POSN_VEL:inst|lpm_dff_oe0:inst12|lpm_ff:lpm_ff_component|dffs[0]                                      ; Lost fanout                                                                   ;
-; Total Number of Removed Registers = 229                                                                                      ;                                                                               ;
+; Total Number of Removed Registers = 230                                                                                      ;                                                                               ;
 +------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 
@@ -1096,12 +1096,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1964  ;
+; Total registers                              ; 2078  ;
 ; Number of registers using Synchronous Clear  ; 163   ;
-; Number of registers using Synchronous Load   ; 176   ;
-; Number of registers using Asynchronous Clear ; 1364  ;
+; Number of registers using Synchronous Load   ; 218   ;
+; Number of registers using Asynchronous Clear ; 1366  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 768   ;
+; Number of registers using Clock Enable       ; 880   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -1221,45 +1221,53 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|PING_TIME[6]                             ;
-; 3:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |DE2bot|VEL_CONTROL:inst51|MOTOR_CMD[23]                      ;
-; 3:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |DE2bot|VEL_CONTROL:inst52|MOTOR_CMD[22]                      ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|ECHO_TIME[1]                             ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE2bot|SCOMP:inst8|AC[7][6]                                  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE2bot|SCOMP:inst8|AC[6][3]                                  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE2bot|SCOMP:inst8|AC[5][4]                                  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE2bot|SCOMP:inst8|AC[4][10]                                 ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE2bot|SCOMP:inst8|AC[3][8]                                  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE2bot|SCOMP:inst8|AC[2][14]                                 ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |DE2bot|SCOMP:inst8|AC[1][14]                                 ;
+; 3:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |DE2bot|VEL_CONTROL:inst51|MOTOR_CMD[6]                       ;
+; 3:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |DE2bot|VEL_CONTROL:inst52|MOTOR_CMD[2]                       ;
 ; 3:1                ; 70 bits   ; 140 LEs       ; 70 LEs               ; 70 LEs                 ; Yes        ; |DE2bot|SCOMP:inst8|PC_STACK[1][6]                            ;
-; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |DE2bot|UART_INTERFACE:inst1|UART:inst2|uart_tx_data_block[0] ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; Yes        ; |DE2bot|SCOMP:inst8|INT_ACK[0]                                ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |DE2bot|SCOMP:inst8|IR[6]                                     ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |DE2bot|UART_INTERFACE:inst1|UART:inst2|uart_tx_data_block[2] ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; Yes        ; |DE2bot|SCOMP:inst8|INT_ACK[2]                                ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |DE2bot|oneshot_i2c:inst18|i2c_oneshot_ctrl:inst3|cmd_num[2]  ;
 ; 7:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |DE2bot|SLCD:inst55|LCD_D[0]                                  ;
-; 6:1                ; 10 bits   ; 40 LEs        ; 10 LEs               ; 30 LEs                 ; Yes        ; |DE2bot|SLCD:inst55|count[0]                                  ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 0 LEs                ; 6 LEs                  ; Yes        ; |DE2bot|oneshot_i2c:inst18|i2c_master:inst|addr_rw[5]         ;
+; 6:1                ; 10 bits   ; 40 LEs        ; 10 LEs               ; 30 LEs                 ; Yes        ; |DE2bot|SLCD:inst55|count[1]                                  ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 0 LEs                ; 6 LEs                  ; Yes        ; |DE2bot|oneshot_i2c:inst18|i2c_master:inst|addr_rw[7]         ;
 ; 5:1                ; 8 bits    ; 24 LEs        ; 0 LEs                ; 24 LEs                 ; Yes        ; |DE2bot|oneshot_i2c:inst18|i2c_master:inst|data_tx[7]         ;
-; 5:1                ; 16 bits   ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |DE2bot|I2C_INTERFACE:inst16|i2c_master:inst|addr_rw[2]       ;
-; 7:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |DE2bot|I2C_INTERFACE:inst16|i2c_ctrl:inst14|tx_byte[3]       ;
-; 13:1               ; 3 bits    ; 24 LEs        ; 18 LEs               ; 6 LEs                  ; Yes        ; |DE2bot|oneshot_i2c:inst18|i2c_oneshot_ctrl:inst3|tx_byte[5]  ;
-; 6:1                ; 17 bits   ; 68 LEs        ; 17 LEs               ; 51 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[8][9]                       ;
-; 6:1                ; 17 bits   ; 68 LEs        ; 17 LEs               ; 51 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[9][14]                      ;
-; 6:1                ; 17 bits   ; 68 LEs        ; 17 LEs               ; 51 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[10][1]                      ;
-; 6:1                ; 17 bits   ; 68 LEs        ; 17 LEs               ; 51 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[11][4]                      ;
-; 6:1                ; 17 bits   ; 68 LEs        ; 17 LEs               ; 51 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[12][14]                     ;
-; 6:1                ; 17 bits   ; 68 LEs        ; 17 LEs               ; 51 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[13][12]                     ;
-; 6:1                ; 17 bits   ; 68 LEs        ; 17 LEs               ; 51 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[14][7]                      ;
-; 6:1                ; 17 bits   ; 68 LEs        ; 17 LEs               ; 51 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[15][14]                     ;
-; 21:1               ; 4 bits    ; 56 LEs        ; 40 LEs               ; 16 LEs                 ; Yes        ; |DE2bot|oneshot_i2c:inst18|i2c_oneshot_ctrl:inst3|tx_byte[2]  ;
-; 17:1               ; 10 bits   ; 110 LEs       ; 60 LEs               ; 50 LEs                 ; Yes        ; |DE2bot|SCOMP:inst8|PC[7]                                     ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |DE2bot|I2C_INTERFACE:inst16|i2c_master:inst|addr_rw[6]       ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |DE2bot|I2C_INTERFACE:inst16|i2c_ctrl:inst14|tx_byte[0]       ;
+; 13:1               ; 3 bits    ; 24 LEs        ; 18 LEs               ; 6 LEs                  ; Yes        ; |DE2bot|oneshot_i2c:inst18|i2c_oneshot_ctrl:inst3|tx_byte[0]  ;
+; 6:1                ; 17 bits   ; 68 LEs        ; 17 LEs               ; 51 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[8][13]                      ;
+; 6:1                ; 17 bits   ; 68 LEs        ; 17 LEs               ; 51 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[9][12]                      ;
+; 6:1                ; 17 bits   ; 68 LEs        ; 17 LEs               ; 51 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[10][3]                      ;
+; 6:1                ; 17 bits   ; 68 LEs        ; 17 LEs               ; 51 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[11][6]                      ;
+; 6:1                ; 17 bits   ; 68 LEs        ; 17 LEs               ; 51 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[12][6]                      ;
+; 6:1                ; 17 bits   ; 68 LEs        ; 17 LEs               ; 51 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[13][6]                      ;
+; 6:1                ; 17 bits   ; 68 LEs        ; 17 LEs               ; 51 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[14][6]                      ;
+; 6:1                ; 17 bits   ; 68 LEs        ; 17 LEs               ; 51 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[15][6]                      ;
+; 21:1               ; 4 bits    ; 56 LEs        ; 40 LEs               ; 16 LEs                 ; Yes        ; |DE2bot|oneshot_i2c:inst18|i2c_oneshot_ctrl:inst3|tx_byte[4]  ;
+; 17:1               ; 10 bits   ; 110 LEs       ; 60 LEs               ; 50 LEs                 ; Yes        ; |DE2bot|SCOMP:inst8|PC[9]                                     ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |DE2bot|oneshot_i2c:inst18|i2c_master:inst|bit_cnt[1]         ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |DE2bot|I2C_INTERFACE:inst16|i2c_master:inst|bit_cnt[2]       ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 0 LEs                ; 4 LEs                  ; Yes        ; |DE2bot|UART_INTERFACE:inst1|UART:inst2|uart_rx_filter[1]     ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |DE2bot|I2C_INTERFACE:inst16|i2c_ctrl:inst14|data_out[12]     ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |DE2bot|I2C_INTERFACE:inst16|i2c_ctrl:inst14|data_out[2]      ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |DE2bot|I2C_INTERFACE:inst16|i2c_master:inst|bit_cnt[0]       ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 0 LEs                ; 4 LEs                  ; Yes        ; |DE2bot|UART_INTERFACE:inst1|UART:inst2|uart_rx_filter[0]     ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |DE2bot|I2C_INTERFACE:inst16|i2c_ctrl:inst14|data_out[9]      ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |DE2bot|I2C_INTERFACE:inst16|i2c_ctrl:inst14|data_out[4]      ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |DE2bot|oneshot_i2c:inst18|i2c_oneshot_ctrl:inst3|cmd_num[0]  ;
-; 6:1                ; 15 bits   ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[0][6]                       ;
-; 6:1                ; 15 bits   ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[1][8]                       ;
-; 6:1                ; 15 bits   ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[2][3]                       ;
-; 6:1                ; 15 bits   ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[3][4]                       ;
-; 6:1                ; 15 bits   ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[4][10]                      ;
+; 6:1                ; 15 bits   ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[0][12]                      ;
+; 6:1                ; 15 bits   ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[1][0]                       ;
+; 6:1                ; 15 bits   ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[2][0]                       ;
+; 6:1                ; 15 bits   ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[3][0]                       ;
+; 6:1                ; 15 bits   ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[4][14]                      ;
 ; 6:1                ; 15 bits   ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[5][4]                       ;
-; 6:1                ; 15 bits   ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[6][13]                      ;
-; 6:1                ; 15 bits   ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[7][1]                       ;
-; 14:1               ; 16 bits   ; 144 LEs       ; 112 LEs              ; 32 LEs                 ; Yes        ; |DE2bot|SCOMP:inst8|AC[5]                                     ;
+; 6:1                ; 15 bits   ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[6][3]                       ;
+; 6:1                ; 15 bits   ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; Yes        ; |DE2bot|SONAR:inst54|SONAR_RESULT[7][11]                      ;
+; 17:1               ; 16 bits   ; 176 LEs       ; 128 LEs              ; 48 LEs                 ; Yes        ; |DE2bot|SCOMP:inst8|AC[0][15]                                 ;
 ; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; No         ; |DE2bot|VEL_CONTROL:inst51|FF_CTRL                            ;
 ; 3:1                ; 23 bits   ; 46 LEs        ; 46 LEs               ; 0 LEs                  ; No         ; |DE2bot|VEL_CONTROL:inst51|FF_CTRL                            ;
 ; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; No         ; |DE2bot|VEL_CONTROL:inst52|FF_CTRL                            ;
@@ -1270,19 +1278,22 @@ Encoding Type:  One-Hot
 ; 3:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; No         ; |DE2bot|VEL_CONTROL:inst51|INT_CTRL                           ;
 ; 3:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; No         ; |DE2bot|VEL_CONTROL:inst52|CMD_VEL                            ;
 ; 3:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; No         ; |DE2bot|VEL_CONTROL:inst52|INT_CTRL                           ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |DE2bot|SCOMP:inst8|STATE                                     ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |DE2bot|oneshot_i2c:inst18|i2c_master:inst|count              ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |DE2bot|I2C_INTERFACE:inst16|i2c_master:inst|count            ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |DE2bot|SCOMP:inst8|Mux59                                     ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |DE2bot|SCOMP:inst8|Mux34                                     ;
 ; 8:1                ; 6 bits    ; 30 LEs        ; 18 LEs               ; 12 LEs                 ; No         ; |DE2bot|ODOMETRY:inst53|Mux5                                  ;
-; 8:1                ; 10 bits   ; 50 LEs        ; 40 LEs               ; 10 LEs                 ; No         ; |DE2bot|ODOMETRY:inst53|Mux13                                 ;
-; 18:1               ; 8 bits    ; 96 LEs        ; 80 LEs               ; 16 LEs                 ; No         ; |DE2bot|SONAR:inst54|Mux7                                     ;
-; 18:1               ; 8 bits    ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; No         ; |DE2bot|SONAR:inst54|Mux14                                    ;
-; 64:1               ; 4 bits    ; 168 LEs       ; 8 LEs                ; 160 LEs                ; No         ; |DE2bot|SCOMP:inst8|Mux26                                     ;
-; 13:1               ; 16 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; No         ; |DE2bot|SCOMP:inst8|Add1                                      ;
+; 8:1                ; 10 bits   ; 50 LEs        ; 40 LEs               ; 10 LEs                 ; No         ; |DE2bot|ODOMETRY:inst53|Mux10                                 ;
+; 18:1               ; 8 bits    ; 96 LEs        ; 80 LEs               ; 16 LEs                 ; No         ; |DE2bot|SONAR:inst54|Mux1                                     ;
+; 18:1               ; 8 bits    ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; No         ; |DE2bot|SONAR:inst54|Mux11                                    ;
+; 64:1               ; 4 bits    ; 168 LEs       ; 8 LEs                ; 160 LEs                ; No         ; |DE2bot|SCOMP:inst8|Mux27                                     ;
+; 14:1               ; 16 bits   ; 144 LEs       ; 64 LEs               ; 80 LEs                 ; No         ; |DE2bot|SCOMP:inst8|Add1                                      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------+
-; Source assignments for SCOMP:inst8|altsyncram:MEMORY|altsyncram_kcu3:auto_generated ;
+; Source assignments for SCOMP:inst8|altsyncram:MEMORY|altsyncram_63t3:auto_generated ;
 +---------------------------------+--------------------+------+-----------------------+
 ; Assignment                      ; Value              ; From ; To                    ;
 +---------------------------------+--------------------+------+-----------------------+
@@ -2000,62 +2011,62 @@ Encoding Type:  One-Hot
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: SCOMP:inst8|altsyncram:MEMORY   ;
-+------------------------------------+------------------------+----------------+
-; Parameter Name                     ; Value                  ; Type           ;
-+------------------------------------+------------------------+----------------+
-; BYTE_SIZE_BLOCK                    ; 8                      ; Untyped        ;
-; AUTO_CARRY_CHAINS                  ; ON                     ; AUTO_CARRY     ;
-; IGNORE_CARRY_BUFFERS               ; OFF                    ; IGNORE_CARRY   ;
-; AUTO_CASCADE_CHAINS                ; ON                     ; AUTO_CASCADE   ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                    ; IGNORE_CASCADE ;
-; WIDTH_BYTEENA                      ; 1                      ; Untyped        ;
-; OPERATION_MODE                     ; SINGLE_PORT            ; Untyped        ;
-; WIDTH_A                            ; 16                     ; Signed Integer ;
-; WIDTHAD_A                          ; 10                     ; Signed Integer ;
-; NUMWORDS_A                         ; 1024                   ; Signed Integer ;
-; OUTDATA_REG_A                      ; UNREGISTERED           ; Untyped        ;
-; ADDRESS_ACLR_A                     ; NONE                   ; Untyped        ;
-; OUTDATA_ACLR_A                     ; NONE                   ; Untyped        ;
-; WRCONTROL_ACLR_A                   ; NONE                   ; Untyped        ;
-; INDATA_ACLR_A                      ; NONE                   ; Untyped        ;
-; BYTEENA_ACLR_A                     ; NONE                   ; Untyped        ;
-; WIDTH_B                            ; 1                      ; Signed Integer ;
-; WIDTHAD_B                          ; 1                      ; Signed Integer ;
-; NUMWORDS_B                         ; 0                      ; Signed Integer ;
-; INDATA_REG_B                       ; CLOCK1                 ; Untyped        ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                 ; Untyped        ;
-; RDCONTROL_REG_B                    ; CLOCK1                 ; Untyped        ;
-; ADDRESS_REG_B                      ; CLOCK1                 ; Untyped        ;
-; OUTDATA_REG_B                      ; UNREGISTERED           ; Untyped        ;
-; BYTEENA_REG_B                      ; CLOCK1                 ; Untyped        ;
-; INDATA_ACLR_B                      ; NONE                   ; Untyped        ;
-; WRCONTROL_ACLR_B                   ; NONE                   ; Untyped        ;
-; ADDRESS_ACLR_B                     ; NONE                   ; Untyped        ;
-; OUTDATA_ACLR_B                     ; NONE                   ; Untyped        ;
-; RDCONTROL_ACLR_B                   ; NONE                   ; Untyped        ;
-; BYTEENA_ACLR_B                     ; NONE                   ; Untyped        ;
-; WIDTH_BYTEENA_A                    ; 1                      ; Signed Integer ;
-; WIDTH_BYTEENA_B                    ; 1                      ; Signed Integer ;
-; RAM_BLOCK_TYPE                     ; AUTO                   ; Untyped        ;
-; BYTE_SIZE                          ; 8                      ; Signed Integer ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE              ; Untyped        ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ   ; Untyped        ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ   ; Untyped        ;
-; INIT_FILE                          ; SimpleRobotProgram.mif ; Untyped        ;
-; INIT_FILE_LAYOUT                   ; PORT_A                 ; Untyped        ;
-; MAXIMUM_DEPTH                      ; 0                      ; Signed Integer ;
-; CLOCK_ENABLE_INPUT_A               ; NORMAL                 ; Untyped        ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL                 ; Untyped        ;
-; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                 ; Untyped        ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                 ; Untyped        ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN        ; Untyped        ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN        ; Untyped        ;
-; ENABLE_ECC                         ; FALSE                  ; Untyped        ;
-; DEVICE_FAMILY                      ; Cyclone II             ; Untyped        ;
-; CBXI_PARAMETER                     ; altsyncram_kcu3        ; Untyped        ;
-+------------------------------------+------------------------+----------------+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SCOMP:inst8|altsyncram:MEMORY ;
++------------------------------------+----------------------+----------------+
+; Parameter Name                     ; Value                ; Type           ;
++------------------------------------+----------------------+----------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped        ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY   ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped        ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped        ;
+; WIDTH_A                            ; 16                   ; Signed Integer ;
+; WIDTHAD_A                          ; 10                   ; Signed Integer ;
+; NUMWORDS_A                         ; 1024                 ; Signed Integer ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped        ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped        ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped        ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped        ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped        ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped        ;
+; WIDTH_B                            ; 1                    ; Signed Integer ;
+; WIDTHAD_B                          ; 1                    ; Signed Integer ;
+; NUMWORDS_B                         ; 0                    ; Signed Integer ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped        ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped        ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped        ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped        ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped        ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped        ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped        ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped        ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped        ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped        ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped        ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Signed Integer ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped        ;
+; BYTE_SIZE                          ; 8                    ; Signed Integer ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped        ;
+; INIT_FILE                          ; albert.mif           ; Untyped        ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped        ;
+; MAXIMUM_DEPTH                      ; 0                    ; Signed Integer ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped        ;
+; ENABLE_ECC                         ; FALSE                ; Untyped        ;
+; DEVICE_FAMILY                      ; Cyclone II           ; Untyped        ;
+; CBXI_PARAMETER                     ; altsyncram_63t3      ; Untyped        ;
++------------------------------------+----------------------+----------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -4175,7 +4186,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Tue Nov 11 13:58:40 2014
+    Info: Processing started: Thu Nov 13 02:13:30 2014
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE2Bot -c DE2Bot
 Info: Found 2 design units, including 1 entities, in source file acc_clk_gen.vhd
     Info: Found design unit 1: ACC_CLK_GEN-a
@@ -4371,6 +4382,7 @@ Info: Instantiated megafunction "altpll0:inst|altpll:altpll_component" with the 
     Info: Parameter "valid_lock_multiplier" = "1"
 Info: Elaborating entity "IO_DECODER" for hierarchy "IO_DECODER:inst24"
 Info: Elaborating entity "SCOMP" for hierarchy "SCOMP:inst8"
+Warning (10036): Verilog HDL or VHDL warning at SCOMP.vhd(80): object "AC_TEMP" assigned a value but never read
 Info: Elaborating entity "altsyncram" for hierarchy "SCOMP:inst8|altsyncram:MEMORY"
 Info: Elaborated megafunction instantiation "SCOMP:inst8|altsyncram:MEMORY"
 Info: Instantiated megafunction "SCOMP:inst8|altsyncram:MEMORY" with the following parameter:
@@ -4393,7 +4405,7 @@ Info: Instantiated megafunction "SCOMP:inst8|altsyncram:MEMORY" with the followi
     Info: Parameter "indata_aclr_a" = "NONE"
     Info: Parameter "indata_aclr_b" = "NONE"
     Info: Parameter "indata_reg_b" = "CLOCK1"
-    Info: Parameter "init_file" = "SimpleRobotProgram.mif"
+    Info: Parameter "init_file" = "albert.mif"
     Info: Parameter "init_file_layout" = "PORT_A"
     Info: Parameter "maximum_depth" = "0"
     Info: Parameter "numwords_a" = "1024"
@@ -4422,20 +4434,9 @@ Info: Instantiated megafunction "SCOMP:inst8|altsyncram:MEMORY" with the followi
     Info: Parameter "wrcontrol_wraddress_reg_b" = "CLOCK1"
     Info: Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info: Parameter "lpm_type" = "altsyncram"
-Info: Found 1 design units, including 1 entities, in source file db/altsyncram_kcu3.tdf
-    Info: Found entity 1: altsyncram_kcu3
-Info: Elaborating entity "altsyncram_kcu3" for hierarchy "SCOMP:inst8|altsyncram:MEMORY|altsyncram_kcu3:auto_generated"
-Warning: 249 out of 1024 addresses are reinitialized. The latest initialized data will replace the existing data. There are 249 warnings found, and 10 warnings are reported.
-    Warning: Memory Initialization File address 0 is reinitialized
-    Warning: Memory Initialization File address 1 is reinitialized
-    Warning: Memory Initialization File address 2 is reinitialized
-    Warning: Memory Initialization File address 3 is reinitialized
-    Warning: Memory Initialization File address 4 is reinitialized
-    Warning: Memory Initialization File address 5 is reinitialized
-    Warning: Memory Initialization File address 6 is reinitialized
-    Warning: Memory Initialization File address 7 is reinitialized
-    Warning: Memory Initialization File address 8 is reinitialized
-    Warning: Memory Initialization File address 9 is reinitialized
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_63t3.tdf
+    Info: Found entity 1: altsyncram_63t3
+Info: Elaborating entity "altsyncram_63t3" for hierarchy "SCOMP:inst8|altsyncram:MEMORY|altsyncram_63t3:auto_generated"
 Info: Elaborating entity "LPM_CLSHIFT" for hierarchy "SCOMP:inst8|LPM_CLSHIFT:SHIFTER"
 Info: Elaborated megafunction instantiation "SCOMP:inst8|LPM_CLSHIFT:SHIFTER"
 Info: Instantiated megafunction "SCOMP:inst8|LPM_CLSHIFT:SHIFTER" with the following parameter:
@@ -5110,7 +5111,7 @@ Critical Warning: Ignored Power-Up Level option on the following registers
     Critical Warning (18010): Register oneshot_i2c:inst18|i2c_oneshot_ctrl:inst3|cmd_num[3] will power up to High
     Critical Warning (18010): Register UART_INTERFACE:inst1|UART:inst2|uart_rx_filter[1] will power up to High
     Critical Warning (18010): Register UART_INTERFACE:inst1|UART:inst2|uart_rx_filter[0] will power up to High
-Info: 173 registers lost all their fanouts during netlist optimizations. The first 173 are displayed below.
+Info: 174 registers lost all their fanouts during netlist optimizations. The first 174 are displayed below.
     Info: Register "UART_INTERFACE:inst1|uart_dcfifo_out:inst14|dcfifo:dcfifo_component|dcfifo_31m1:auto_generated|dffpipe_adc:rs_bwp|dffe15a[6]" lost all its fanouts during netlist optimizations.
     Info: Register "UART_INTERFACE:inst1|uart_dcfifo_out:inst14|dcfifo:dcfifo_component|dcfifo_31m1:auto_generated|dffpipe_adc:rs_brp|dffe15a[6]" lost all its fanouts during netlist optimizations.
     Info: Register "OPTICAL_ENCODER:inst27|POSN_VEL:inst|lpm_dff_oe0:inst14|lpm_ff:lpm_ff_component|dffs[31]" lost all its fanouts during netlist optimizations.
@@ -5210,6 +5211,7 @@ Info: 173 registers lost all their fanouts during netlist optimizations. The fir
     Info: Register "OPTICAL_ENCODER:inst22|POSN_VEL:inst|lpm_dff_oe0:inst11|lpm_ff:lpm_ff_component|dffs[27]" lost all its fanouts during netlist optimizations.
     Info: Register "OPTICAL_ENCODER:inst22|POSN_VEL:inst|lpm_dff_oe0:inst10|lpm_ff:lpm_ff_component|dffs[27]" lost all its fanouts during netlist optimizations.
     Info: Register "VEL_CONTROL:inst52|SH_ACK" lost all its fanouts during netlist optimizations.
+    Info: Register "SCOMP:inst8|STATE.EX_SWITCH2" lost all its fanouts during netlist optimizations.
     Info: Register "ODOMETRY:inst53|XPOS[27]" lost all its fanouts during netlist optimizations.
     Info: Register "ODOMETRY:inst53|XPOS[28]" lost all its fanouts during netlist optimizations.
     Info: Register "ODOMETRY:inst53|XPOS[29]" lost all its fanouts during netlist optimizations.
@@ -5284,18 +5286,18 @@ Info: 173 registers lost all their fanouts during netlist optimizations. The fir
     Info: Register "OPTICAL_ENCODER:inst27|POSN_VEL:inst|lpm_dff_oe0:inst12|lpm_ff:lpm_ff_component|dffs[1]" lost all its fanouts during netlist optimizations.
     Info: Register "OPTICAL_ENCODER:inst27|POSN_VEL:inst|lpm_dff_oe0:inst14|lpm_ff:lpm_ff_component|dffs[0]" lost all its fanouts during netlist optimizations.
     Info: Register "OPTICAL_ENCODER:inst27|POSN_VEL:inst|lpm_dff_oe0:inst12|lpm_ff:lpm_ff_component|dffs[0]" lost all its fanouts during netlist optimizations.
-Info: Implemented 5472 device resources after synthesis - the final resource count might be different
+Info: Implemented 5782 device resources after synthesis - the final resource count might be different
     Info: Implemented 45 input pins
     Info: Implemented 134 output pins
     Info: Implemented 4 bidirectional pins
-    Info: Implemented 5165 logic cells
+    Info: Implemented 5475 logic cells
     Info: Implemented 80 RAM segments
     Info: Implemented 2 PLLs
     Info: Implemented 42 DSP elements
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 96 warnings
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 86 warnings
     Info: Peak virtual memory: 291 megabytes
-    Info: Processing ended: Tue Nov 11 13:59:09 2014
-    Info: Elapsed time: 00:00:29
-    Info: Total CPU time (on all processors): 00:00:31
+    Info: Processing ended: Thu Nov 13 02:13:56 2014
+    Info: Elapsed time: 00:00:26
+    Info: Total CPU time (on all processors): 00:00:27
 
 
