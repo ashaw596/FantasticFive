@@ -6,6 +6,8 @@
 ORG        &H000       ; Jump table is located in mem 0-4
 START:	LOADI		TEST1
 		LOADA		0
+        ADDA    1    2   3
+        ADD    1    
 		OUT 		LCD
 		JUMP	START
 

@@ -52,7 +52,9 @@ ARCHITECTURE a OF SCOMP IS
 		EX_RETI,
 		EX_LOADA,
 		EX_SWITCH,
-		EX_SWITCH2
+		EX_COPY,
+		EX_ADDA,
+		EX_ADDIA
 	);
 
 	TYPE STACK_TYPE IS ARRAY (0 TO 7) OF STD_LOGIC_VECTOR(9 DOWNTO 0);
@@ -77,6 +79,7 @@ ARCHITECTURE a OF SCOMP IS
 	SIGNAL INT_REQ_SYNC : STD_LOGIC_VECTOR( 3 DOWNTO 0); -- registered version of INT_REQ
 	SIGNAL INT_ACK      : STD_LOGIC_VECTOR( 3 DOWNTO 0);
 	SIGNAL IN_HOLD      : STD_LOGIC;
+	SIGNAL AC_TEMP		: STD_LOGIC_VECTOR(16 DOWNTO 0);
 
 
 BEGIN
@@ -380,7 +383,15 @@ BEGIN
 					STATE <= FETCH; 
 				
 				WHEN EX_COPY =>
-					AC(conv_integer(IR(4 DOWNTO 0))) <= AC(conv_integer(IR(9 DOWNTO 5)));
+					AC(conv_integer(IR(9 DOWNTO 5))) <= AC(conv_integer(IR(4 DOWNTO 0)));
+					STATE <= FETCH; 
+				
+				WHEN EX_ADDA =>
+					AC(conv_integer(IR(9 DOWNTO 6))) <= AC(conv_integer(IR(5 DOWNTO 3))) + AC(conv_integer(IR(2 DOWNTO 0)));
+					STATE <= FETCH;
+					
+				WHEN EX_ADDIA =>
+					AC(conv_integer(IR(9 DOWNTO 7))) <= AC(conv_integer(IR(9 DOWNTO 7))) + (IR(6)&IR(6)&IR(6)&IR(6)&IR(6)&IR(6)&IR(6)&IR(6)&IR(6)&IR(6 DOWNTO 0));
 					STATE <= FETCH; 
 
 				WHEN OTHERS =>
