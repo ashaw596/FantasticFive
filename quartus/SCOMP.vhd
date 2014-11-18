@@ -52,12 +52,18 @@ ARCHITECTURE a OF SCOMP IS
 		EX_RETI,
 		EX_LOADA,
 		EX_SWITCH,
+		EX_SWITCH2,
 		EX_COPY,
 		EX_ADDA,
 		EX_ADDIA,
 		EX_STOREA,
 		EX_STOREA2,
-		EX_MULTA
+		EX_MULTA,
+		EX_OUTA,
+		EX_OUTA2,
+		EX_OUTA3,
+		EX_INA,
+		EX_SUBA
 	);
 
 	TYPE STACK_TYPE IS ARRAY (0 TO 7) OF STD_LOGIC_VECTOR(9 DOWNTO 0);
@@ -77,12 +83,13 @@ ARCHITECTURE a OF SCOMP IS
 	SIGNAL MW           : STD_LOGIC;
 	SIGNAL IO_WRITE_INT : STD_LOGIC;
 	SIGNAL GIE          : STD_LOGIC;
-	SIGNAL IIE      : STD_LOGIC_VECTOR( 3 DOWNTO 0);
+	SIGNAL IIE     		: STD_LOGIC_VECTOR( 3 DOWNTO 0);
 	SIGNAL INT_REQ      : STD_LOGIC_VECTOR( 3 DOWNTO 0);
 	SIGNAL INT_REQ_SYNC : STD_LOGIC_VECTOR( 3 DOWNTO 0); -- registered version of INT_REQ
 	SIGNAL INT_ACK      : STD_LOGIC_VECTOR( 3 DOWNTO 0);
 	SIGNAL IN_HOLD      : STD_LOGIC;
 	SIGNAL AC_TEMP		: STD_LOGIC_VECTOR(15 DOWNTO 0);
+	SIGNAL AC_TEMP2		: STD_LOGIC_VECTOR(15 DOWNTO 0);
 
 
 BEGIN
@@ -99,7 +106,7 @@ BEGIN
 		wrcontrol_aclr_a => "NONE",
 		address_aclr_a   => "NONE",
 		outdata_aclr_a   => "NONE",
-		init_file        => "albert.mif",
+		init_file        => "facewall.mif",
 		lpm_hint         => "ENABLE_RUNTIME_MOD=NO",
 		lpm_type         => "altsyncram"
 	)
@@ -148,7 +155,9 @@ BEGIN
 
 	WITH STATE SELECT IO_CYCLE <=
 		'1' WHEN EX_IN,
+		'1' WHEN EX_INA,
 		'1' WHEN EX_OUT2,
+		'1' WHEN EX_OUTA3,
 		'0' WHEN OTHERS;
 
 	IO_WRITE <= IO_WRITE_INT;
@@ -163,6 +172,9 @@ BEGIN
 					MW        <= '0';          -- Clear memory write flag
 					PC        <= "0000000000"; -- Reset PC to the beginning of memory, address 0x000
 					AC(0)        <= x"0000";      -- Clear AC register
+					FOR i IN 0 TO 7 LOOP
+						AC(i) <= x"0000";
+					END LOOP;
 					IO_WRITE_INT <= '0';
 					GIE       <= '1';          -- Enable interrupts
 					IIE       <= "0000";       -- Mask all interrupts
@@ -241,8 +253,8 @@ BEGIN
 						WHEN "010010" =>       -- IN
 							STATE <= EX_IN;
 						WHEN "010011" =>       -- OUT
-							STATE <= EX_OUT;
 							IO_WRITE_INT <= '1'; -- raise IO_WRITE
+							STATE <= EX_OUT;
 						WHEN "010100" =>       -- CLI
 							IIE <= IIE AND NOT(IR(3 DOWNTO 0));  -- disable indicated interrupts
 							STATE <= FETCH;
@@ -254,8 +266,9 @@ BEGIN
 						WHEN "010111" =>       -- LOADI
 							STATE <= EX_LOADI;
 						WHEN "01"&x"8" =>	   -- LOADA
+							AC_TEMP <= IR;
 							STATE <= EX_LOADA;
-						WHEN "10"&x"0" =>	   -- SWITCH
+						WHEN "01"&x"9" =>	   -- SWITCH
 							STATE <= EX_SWITCH;
 						WHEN "10"&x"1" =>		-- COPY
 							STATE <= EX_COPY;
@@ -267,6 +280,12 @@ BEGIN
 							STATE <= EX_STOREA;
 						WHEN "10"&x"5" =>		-- MULTA
 							STATE <= EX_MULTA;
+						WHEN "10"&x"6" =>		-- OUTA
+							STATE <= EX_OUTA;
+						WHEN "10"&x"7" =>
+							STATE <= EX_INA;
+						WHEN "10"&x"8" =>
+							STATE <= EX_SUBA;	
 						
 
 						WHEN OTHERS =>
@@ -373,6 +392,7 @@ BEGIN
 					STATE <= EX_OUT2;
 
 				WHEN EX_OUT2 =>
+					IO_WRITE_INT <= '0';
 					STATE <= FETCH;
 
 				WHEN EX_LOADI =>
@@ -387,16 +407,21 @@ BEGIN
 					STATE <= FETCH;
 				
 				WHEN EX_LOADA =>		-- MDR = MEM(IR + AC)
-					IR(9 DOWNTO 0) <= IR(9 DOWNTO 0) + AC(0)(9 DOWNTO 0);
-					AC(conv_integer(IR(9 DOWNTO 5))) <= MDR;
+					IR(9 DOWNTO 0) <= AC(conv_integer(AC_TEMP(4 DOWNTO 0)))(9 DOWNTO 0);
+					AC(conv_integer(AC_TEMP(9 DOWNTO 5))) <= MDR;
+					--AC(conv_integer(AC_TEMP(9 DOWNTO 5))) <= x"0000";
 					STATE <= FETCH;
 					
 					
 				WHEN EX_SWITCH =>
-					AC_TEMP <= AC(conv_integer(IR(9 DOWNTO 5)));
-					AC(conv_integer(IR(9 DOWNTO 5))) <= AC(conv_integer(IR(4 DOWNTO 0)));
-					AC(conv_integer(IR(4 DOWNTO 0))) <= AC(conv_integer(IR(9 DOWNTO 5)));
-					STATE <= FETCH; 
+					AC_TEMP <= AC(conv_integer(IR(5 DOWNTO 3)));
+					AC_TEMP2 <= AC(conv_integer(IR(2 DOWNTO 0)));
+					STATE <= EX_SWITCH2;
+				
+				WHEN EX_SWITCH2 =>
+					AC(conv_integer(IR(2 DOWNTO 0))) <= AC_TEMP;
+					AC(conv_integer(IR(5 DOWNTO 3))) <= AC_TEMP2;
+					STATE <= FETCH;
 				
 				WHEN EX_COPY =>
 					AC(conv_integer(IR(9 DOWNTO 5))) <= AC(conv_integer(IR(4 DOWNTO 0)));
@@ -423,6 +448,34 @@ BEGIN
 					
 				WHEN EX_MULTA =>
 					AC(conv_integer(IR(9 DOWNTO 7))) <= signed(AC(conv_integer(IR(6 DOWNTO 4)))) * signed(AC(conv_integer(IR(3 DOWNTO 0))));
+					STATE <= FETCH;
+					
+				WHEN EX_OUTA =>
+					AC_TEMP <= AC(0);
+					AC(0) <= AC(conv_integer(IR(9 DOWNTO 8)));
+					--AC(0)	<= x"3333";
+					STATE <= EX_OUTA2;
+					IO_WRITE_INT <= '1'; -- raise IO_WRITE
+
+				WHEN EX_OUTA2 =>
+					STATE <= EX_OUTA3;
+					
+				WHEN EX_OUTA3 =>
+					IO_WRITE_INT <= '0'; -- raise IO_WRITE
+					AC(0) <= AC_TEMP;
+					STATE <= FETCH;
+				
+				WHEN EX_INA =>
+					IF IN_HOLD = '0' THEN
+						AC(conv_integer(IR(9 DOWNTO 8)))    <= IO_DATA;
+						IN_HOLD <= '1';
+					ELSE
+						STATE <= FETCH;
+						IN_HOLD <= '0';
+					END IF;
+				
+				WHEN EX_SUBA =>
+					AC(conv_integer(IR(9 DOWNTO 7))) <= AC(conv_integer(IR(6 DOWNTO 4))) - AC(conv_integer(IR(3 DOWNTO 0)));
 					STATE <= FETCH;
 					
 				WHEN OTHERS =>

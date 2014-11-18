@@ -4,15 +4,36 @@
 ; This program does basic initialization of the DE2Bot
 ; and provides an example of SCOMP's interrupt system.
 ORG        &H000       ; Jump table is located in mem 0-4
-START:	LOADI		TEST1
-		LOADA		0
-        ADDA    1    2   3
-        ADD    1    
-		OUT 		LCD
-		JUMP	START
 
-TEST1:	DW	400
+START:	LOAD TEST2
+		CALL WaitOne
+		JUMP MAIN
+		
 
+TEST1:	DW	&H1111
+TEST2: DW	&H4444
+MAIN:	LOADI		TEST1
+		OUT 	 	LCD
+		
+		SWITCH		0, 2
+		LOADA		1, 2
+		OUT 	 	SSEG1
+		;SWITCH		0, 1
+		OUTA 	 	1, SSEG2
+		OUT			LCD
+		;SWITCH		0, 1
+		;OUT		SSEG2
+		;SWITCH		0, 1
+		
+DIE:	JUMP 	DIE
+WaitOne:
+	OUT    TIMER
+Wloop2:
+	IN     TIMER
+	OUT    XLEDS       ; User-feedback that a pause is occurring.
+	ADDI   -5         ; 1 second in 10Hz.
+	JNEG   Wloop2
+	RETURN
 ;***************************************************************
 ;* IO address space map
 ;***************************************************************

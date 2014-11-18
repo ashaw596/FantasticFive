@@ -10,11 +10,23 @@ CONTENT
   BEGIN
     [000..3FF] : 0000;  -- Default to NOP
 
-           000 : 5C06;  -- START:	LOADI		TEST1
-           001 : 6000;  -- 		LOADA		0
-           002 : 8853;  --         ADDA    1    2   3
-           003 : 0C01;  --         ADD    1    
-           004 : 4C06;  -- 		OUT 		LCD
-           005 : 1400;  -- 		JUMP	START
-           006 : 0190;  -- TEST1:	DW	400
+           000 : 0404;  -- START:	LOAD TEST2
+           001 : 400D;  -- 		CALL WaitOne
+           002 : 1405;  -- 		JUMP MAIN
+           003 : 1111;  -- TEST1:	DW	&H1111
+           004 : 4444;  -- TEST2: DW	&H4444
+           005 : 5C03;  -- MAIN:	LOADI		TEST1
+           006 : 4C06;  -- 		OUT 	 	LCD
+           007 : 6402;  -- 		SWITCH		0, 2
+           008 : 6022;  -- 		LOADA		1, 2
+           009 : 4C04;  -- 		OUT 	 	SSEG1
+           00A : 9905;  -- 		OUTA 	 	1, SSEG2
+           00B : 4C06;  -- 		OUT			LCD
+           00C : 140C;  -- DIE:	JUMP 	DIE
+           00D : 4C02;  -- 	OUT    TIMER
+           00E : 4802;  -- 	IN     TIMER
+           00F : 4C07;  -- 	OUT    XLEDS       ; User-feedback that a pause is occurring.
+           010 : 37FB;  -- 	ADDI   -5         ; 1 second in 10Hz.
+           011 : 180E;  -- 	JNEG   Wloop2
+           012 : 4400;  -- 	RETURN
   END;

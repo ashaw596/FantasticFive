@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Thu Nov 13 03:52:04 2014
-Quartus II Version : 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition
+Analysis & Synthesis Status : Successful - Mon Nov 17 18:53:02 2014
+Quartus II Version : 9.1 Build 350 03/24/2010 SP 2 SJ Full Version
 Revision Name : DE2Bot
 Top-level Entity Name : DE2bot
 Family : Cyclone II
-Total logic elements : 5,633
-    Total combinational functions : 5,030
-    Dedicated logic registers : 2,099
-Total registers : 2099
+Total logic elements : 5,911
+    Total combinational functions : 5,305
+    Dedicated logic registers : 2,122
+Total registers : 2122
 Total pins : 183
 Total virtual pins : 0
 Total memory bits : 90,752
-Embedded Multiplier 9-bit elements : 42
+Embedded Multiplier 9-bit elements : 44
 Total PLLs : 2
