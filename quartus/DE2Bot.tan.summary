@@ -5,9 +5,9 @@ Timing Analyzer Summary
 Type           : Worst-case tsu
 Slack          : N/A
 Required Time  : None
-Actual Time    : 7.356 ns
+Actual Time    : 9.920 ns
 From           : SONAR_ECHO
-To             : SONAR:inst54|SONAR_RESULT[15][9]
+To             : SONAR:inst54|SONAR_INT
 From Clock     : --
 To Clock       : CLOCK_50
 Failed Paths   : 0
@@ -15,9 +15,9 @@ Failed Paths   : 0
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 14.684 ns
-From           : QUAD_HEX:inst56|HEX_DISP:inst22|latched_hex[0]
-To             : HEX5[6]
+Actual Time    : 14.910 ns
+From           : QUAD_HEX:inst57|HEX_DISP:inst22|latched_hex[1]
+To             : HEX1[2]
 From Clock     : CLOCK_50
 To Clock       : --
 Failed Paths   : 0
@@ -25,8 +25,8 @@ Failed Paths   : 0
 Type           : Worst-case tpd
 Slack          : N/A
 Required Time  : None
-Actual Time    : 11.661 ns
-From           : ALIVE
+Actual Time    : 11.930 ns
+From           : PWR_FAIL
 To             : LEDG[8]
 From Clock     : --
 To Clock       : --
@@ -35,49 +35,49 @@ Failed Paths   : 0
 Type           : Worst-case th
 Slack          : N/A
 Required Time  : None
-Actual Time    : 2.852 ns
-From           : SW[4]
-To             : DIG_IN:inst5|B_DI[4]
+Actual Time    : 3.147 ns
+From           : SW[8]
+To             : DIG_IN:inst5|B_DI[8]
 From Clock     : --
 To Clock       : CLOCK_50
 Failed Paths   : 0
 
-Type           : Clock Setup: 'altpll0:inst|altpll:altpll_component|_clk1'
-Slack          : -0.734 ns
-Required Time  : 25.00 MHz ( period = 40.000 ns )
-Actual Time    : N/A
-From           : VEL_CONTROL:inst52|IO_DATA_INT[0]
-To             : VEL_CONTROL:inst52|MOTOR_CMD[16]
-From Clock     : altpll0:inst|altpll:altpll_component|_clk0
-To Clock       : altpll0:inst|altpll:altpll_component|_clk1
-Failed Paths   : 333
-
 Type           : Clock Setup: 'altpll0:inst|altpll:altpll_component|_clk2'
-Slack          : -0.473 ns
+Slack          : -0.069 ns
 Required Time  : 100.00 MHz ( period = 10.000 ns )
 Actual Time    : N/A
-From           : VEL_CONTROL:inst52|MOTOR_CMD[9]
+From           : VEL_CONTROL:inst52|MOTOR_CMD[5]
 To             : VEL_CONTROL:inst52|MOTOR_PHASE
 From Clock     : altpll0:inst|altpll:altpll_component|_clk1
 To Clock       : altpll0:inst|altpll:altpll_component|_clk2
-Failed Paths   : 10
+Failed Paths   : 2
+
+Type           : Clock Setup: 'altpll0:inst|altpll:altpll_component|_clk1'
+Slack          : 0.149 ns
+Required Time  : 25.00 MHz ( period = 40.000 ns )
+Actual Time    : N/A
+From           : VEL_CONTROL:inst51|IO_DATA_INT[0]
+To             : VEL_CONTROL:inst51|MOTOR_CMD[14]
+From Clock     : altpll0:inst|altpll:altpll_component|_clk0
+To Clock       : altpll0:inst|altpll:altpll_component|_clk1
+Failed Paths   : 0
 
 Type           : Clock Setup: 'altpll0:inst|altpll:altpll_component|_clk0'
-Slack          : 10.747 ns
+Slack          : 11.534 ns
 Required Time  : 12.50 MHz ( period = 80.000 ns )
 Actual Time    : N/A
-From           : TIMER:inst20|COUNT[5]
-To             : SCOMP:inst8|AC[0][5]
+From           : TIMER:inst20|COUNT[7]
+To             : SCOMP:inst8|AC[0][7]
 From Clock     : altpll0:inst|altpll:altpll_component|_clk1
 To Clock       : altpll0:inst|altpll:altpll_component|_clk0
 Failed Paths   : 0
 
 Type           : Clock Setup: 'altpll1:inst11|altpll:altpll_component|_clk0'
-Slack          : 63.867 ns
+Slack          : 63.654 ns
 Required Time  : 14.73 MHz ( period = 67.901 ns )
 Actual Time    : Restricted to 235.07 MHz ( period = 4.254 ns )
 From           : UART_INTERFACE:inst1|uart_dcfifo_in:inst8|dcfifo:dcfifo_component|dcfifo_qtl1:auto_generated|altsyncram_7hu:fifo_ram|ram_block14a0~portb_address_reg3
-To             : UART_INTERFACE:inst1|UART:inst2|uart_tx_data_block[4]
+To             : UART_INTERFACE:inst1|UART:inst2|uart_tx_data_block[3]
 From Clock     : altpll1:inst11|altpll:altpll_component|_clk0
 To Clock       : altpll1:inst11|altpll:altpll_component|_clk0
 Failed Paths   : 0
@@ -86,8 +86,8 @@ Type           : Clock Setup: 'AUD_DACLR'
 Slack          : N/A
 Required Time  : None
 Actual Time    : Restricted to 260.01 MHz ( period = 3.846 ns )
-From           : DAC_BEEP:inst45|lpm_dff_db0:inst2|lpm_ff:lpm_ff_component|dffs[3]
-To             : DAC_BEEP:inst45|altsyncram_db0:inst8|altsyncram:altsyncram_component|altsyncram_koa1:auto_generated|ram_block1a7~porta_address_reg3
+From           : DAC_BEEP:inst45|lpm_dff_db0:inst2|lpm_ff:lpm_ff_component|dffs[8]
+To             : DAC_BEEP:inst45|altsyncram_db0:inst8|altsyncram:altsyncram_component|altsyncram_koa1:auto_generated|ram_block1a7~porta_address_reg8
 From Clock     : AUD_DACLR
 To Clock       : AUD_DACLR
 Failed Paths   : 0
@@ -96,31 +96,31 @@ Type           : Clock Setup: 'AUD_BCLK'
 Slack          : N/A
 Required Time  : None
 Actual Time    : Restricted to 450.05 MHz ( period = 2.222 ns )
-From           : DAC_BEEP:inst45|lpm_shiftreg_db0:inst6|lpm_shiftreg:lpm_shiftreg_component|dffs[13]
-To             : DAC_BEEP:inst45|lpm_shiftreg_db0:inst6|lpm_shiftreg:lpm_shiftreg_component|dffs[14]
+From           : DAC_BEEP:inst45|lpm_shiftreg_db0:inst6|lpm_shiftreg:lpm_shiftreg_component|dffs[14]
+To             : DAC_BEEP:inst45|lpm_shiftreg_db0:inst6|lpm_shiftreg:lpm_shiftreg_component|dffs[15]
 From Clock     : AUD_BCLK
 To Clock       : AUD_BCLK
 Failed Paths   : 0
 
 Type           : Clock Hold: 'altpll0:inst|altpll:altpll_component|_clk0'
-Slack          : -2.495 ns
+Slack          : -3.342 ns
 Required Time  : 12.50 MHz ( period = 80.000 ns )
 Actual Time    : N/A
-From           : UART_INTERFACE:inst1|uart_dcfifo_out:inst14|dcfifo:dcfifo_component|dcfifo_31m1:auto_generated|dffpipe_adc:rs_bwp|dffe15a[1]
-To             : UART_INTERFACE:inst1|lpm_dff_uart0:inst15|lpm_ff:lpm_ff_component|dffs[1]
+From           : UART_INTERFACE:inst1|uart_dcfifo_out:inst14|dcfifo:dcfifo_component|dcfifo_31m1:auto_generated|dffpipe_adc:rs_brp|dffe15a[5]
+To             : UART_INTERFACE:inst1|lpm_dff_uart0:inst15|lpm_ff:lpm_ff_component|dffs[5]
 From Clock     : altpll0:inst|altpll:altpll_component|_clk0
 To Clock       : altpll0:inst|altpll:altpll_component|_clk0
-Failed Paths   : 215
+Failed Paths   : 85
 
 Type           : Clock Hold: 'altpll0:inst|altpll:altpll_component|_clk1'
-Slack          : -1.717 ns
+Slack          : -1.853 ns
 Required Time  : 25.00 MHz ( period = 40.000 ns )
 Actual Time    : N/A
 From           : OPTICAL_ENCODER:inst27|POSN_VEL:inst|QUADRATURE_DECODE:inst|inst24
 To             : OPTICAL_ENCODER:inst27|POSN_VEL:inst|QUADRATURE_DECODE:inst|inst7
 From Clock     : altpll0:inst|altpll:altpll_component|_clk1
 To Clock       : altpll0:inst|altpll:altpll_component|_clk1
-Failed Paths   : 25
+Failed Paths   : 8
 
 Type           : Clock Hold: 'altpll1:inst11|altpll:altpll_component|_clk0'
 Slack          : 0.391 ns
@@ -133,11 +133,11 @@ To Clock       : altpll1:inst11|altpll:altpll_component|_clk0
 Failed Paths   : 0
 
 Type           : Clock Hold: 'altpll0:inst|altpll:altpll_component|_clk2'
-Slack          : 0.527 ns
+Slack          : 0.521 ns
 Required Time  : 100.00 MHz ( period = 10.000 ns )
 Actual Time    : N/A
-From           : VEL_CONTROL:inst52|lpm_counter:counter|cntr_gkj:auto_generated|safe_q[11]
-To             : VEL_CONTROL:inst52|lpm_counter:counter|cntr_gkj:auto_generated|safe_q[11]
+From           : VEL_CONTROL:inst51|lpm_counter:counter|cntr_gkj:auto_generated|safe_q[11]
+To             : VEL_CONTROL:inst51|lpm_counter:counter|cntr_gkj:auto_generated|safe_q[11]
 From Clock     : altpll0:inst|altpll:altpll_component|_clk2
 To Clock       : altpll0:inst|altpll:altpll_component|_clk2
 Failed Paths   : 0
@@ -150,7 +150,7 @@ From           :
 To             : 
 From Clock     : 
 To Clock       : 
-Failed Paths   : 583
+Failed Paths   : 95
 
 --------------------------------------------------------------------------------------
 
