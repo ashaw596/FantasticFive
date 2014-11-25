@@ -98,7 +98,7 @@ InfLoop:
 	;OUT    SSEG1
 	;LOAD   SonCount    ; The sonar ISR increments this each warning
 	;OUT    SSEG2
-
+Locate:
 	CALL	MeasureDIST0
 	OUT		SSEG1
 	STORE	TilesLeft
@@ -114,6 +114,44 @@ InfLoop:
 	CALL	MeasureDIST5
 	OUT		SSEG2
 	STORE	TilesBehind
+	
+	;Pack Bits
+	LOAD	TilesForward
+	SHIFT	3
+	OR		TilesBehind
+	SHIFT	3
+	OR		TilesRight
+	SHIFT	3
+	OR		TilesLeft
+	LOC		;Completes Lookup and stores result to AC
+	
+	JZERO	Locate			;LOC returns zero if no match found
+	
+	;Unpack Bits
+	COPY	1, 0
+	ANDI	&B111
+	STORE	LocY
+	COPY	0, 1
+	SHIFT 	-3
+	ANDI	&B111
+	STORE	LocX
+	COPY	0, 1
+	SHIFT 	-6
+	ANDI	&B111
+	STORE	LocTheta
+	COPY	0, 1
+	SHIFT 	-9
+	ANDI	&B11111
+	STORE	LocID
+	
+	;Display Location
+	LOAD	LocX
+	SHIFT	8
+	OR		LocY
+	OUT		SSEG2
+	
+	
+	;Call Stop and Beep Function
 	
 Die:
 	Jump Die
