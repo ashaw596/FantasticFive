@@ -151,7 +151,7 @@ Locate:
 	OUT		SSEG2
 	
 	
-	;Call Stop and Beep Function
+	CALL	StopBeep
 	
 Die:
 	Jump Die
@@ -202,8 +202,36 @@ TargetAngle: DW  0
 
 	
 	
+;***************************************************************
+;* Stop for 3 seconds and beep for 1 second
+;***************************************************************
 
-	
+StopBeep:
+		LOAD	Zero
+		OUT		LVELCMD
+		OUT		RVELCMD
+		OUT		TIMER
+StopLoop:
+		IN		TIMER
+		SUBI	10 ;Wait 1 Sec
+		JNEG	StopLoop
+		
+		LOAD	TWO
+		OUT		BEEP
+		OUT		TIMER
+BeepLoop:
+		IN		TIMER
+		SUBI	10 ;Wait 1 Sec
+		JNEG	BeepLoop
+		
+		OUT		TIMER
+StopLoop2:
+		IN		TIMER
+		SUBI	10 ;Wait 1 Sec
+		JNEG	StopLoop2
+		
+		RETURN
+		
 ;***************************************************************
 ;* Measure Sonar Distance and Store the value, in tiles, to AC
 ;***************************************************************
