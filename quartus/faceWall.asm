@@ -18,7 +18,6 @@ Init:
 	OUT    LVELCMD     ; Stop motors
 	OUT    RVELCMD
 	OUT    SONAREN     ; Disable sonar (optional)
-	
 	CALL   SetupI2C    ; Configure the I2C to read the battery voltage
 	CALL   BattCheck   ; Get battery voltage (and end if too low).
 	OUT    LCD         ; Display batt voltage on LCD
@@ -38,7 +37,7 @@ WaitForUser:
 	; Wait for user to press PB3
 	IN     TIMER       ; We'll blink the LEDs above PB3
 	AND    Mask1
-	SHIFT  5           ; Both LEDG6 and LEDG7
+	SHIFT  5          ; Both LEDG6 and LEDG7
 	STORE  Temp        ; (overkill, but looks nice)
 	SHIFT  1
 	OR     Temp
@@ -54,19 +53,83 @@ WaitForUser:
 ;***************************************************************
 Main: ; "Real" program starts here.
 		OUT    RESETPOS    ; reset odometry in case wheels moved after programming
-		LOADI  &B010010
-		OUT    SONAREN     ; turn on sonars 0 and 5
-		JUMP	FACEWALL		
+		LOADI  &B001100
+		OUT    SONAREN     ; turn on sonars 2 and 3
+		LOADI	5
+		CALL	WaitAC
+		;CALL	FACECLOSE
+		;CALL	FACEWFUNC
+		LOADI  	&B100001
+		OUT    	SONAREN     ; turn on sonars 0 and 5
+		LOADI	5
+		CALL	WaitAC
+		CALL	LOCATE
+		JUMP 	die		
+		OUT    RESETPOS 
+		LOADI	&HFEED
+		OUT		LCD
+		LOADI	90
+		CALL	ROTATE
+		CALL	FACEWFUNC	
 		JUMP die
 		
-FACEWALL:
-			LOADI	1
-			CALL	WaitAC
-			LOAD	ZERO
+TURNR90:	OUT    RESETPOS
+			LOADI	90
+			CALL	ROTATE
+			RETURN
+MAXSONAR:	DW		&H7FFF
+
+FACECLOSE:	OUT    	RESETPOS	;Turns to Global Mininum
+			LOAD	MAXSONAR
+			COPY	4, 0		;AC(4) = min_dist
+			LOADI	0
+			COPY	2, 0		;AC(2) = theta of min_dist [0,360]
+FCLOSELOOP:	LOAD	RSLOW
 			OUT    	LVELCMD
-			OUT    	RVELCMD
-			INA		1, DIST1
-			INA		2, DIST4
+			LOAD	FSlow
+			OUT    	RVELCMD				
+			INA		3, THETA
+			COPY	0, 3
+			
+			ADDI	-350
+			JPOS	FCLOSEST
+			COPY	0, 4
+			OUT		SSEG2
+FCLOSEB:	INA		1, DIST2
+			OUTA	1, SSEG1
+			SUBA	0, 4, 1
+			JNEG	FCLOSELOOP
+			COPY	2, 3
+			COPY	4, 1
+			OUTA	2, LCD
+			OUTA	1, SSEG1
+			JUMP	FCLOSELOOP
+			
+FCLOSEST:	COPY	0, 3
+			ADDI	-355
+			JPOS	FCLOSEB
+			LOADI	0
+			OUT    	LVELCMD
+			OUT    	RVELCMD	
+			COPY	0, 2
+			CALL	CENTER
+			CALL	ROTATE
+			RETURN
+			
+		
+FACEWFUNC:	LOADI 	5
+			CALL 	WAITAC
+			OUT		TIMER
+FACEWALL:	IN		TIMER
+			ADDI	-50
+			JNEG	FACESKIP
+			CALL	TURNR90
+			OUT		TIMER
+			
+			;LOADI	10
+			;CALL	WNoTimer
+FACESKIP:	INA		1, DIST2
+			INA		2, DIST3
 			;LOADI	10
 			;COPY	1, 0
 			;LOADI	15
@@ -77,9 +140,26 @@ FACEWALL:
 		
 			;JUMP	FACEWALL
 			SUBA	0, 1, 2
+			
+			COPY 	3, 0
+			CALL	ABS
 			OUTA	0, SSEG1
-			;JUMP	FACEWALL
+			ADDI	-80
+			JNEG	CLOSE
+			LOADI	0
+			COPY	4, 0
+			COPY	0, 3
 			JNEG	TURNLEFT
+			JUMP	TURNRIGHT
+CLOSE:		LOADI	0
+			OUT    	LVELCMD
+			OUT    	RVELCMD
+			ADDIA	4,	1
+			COPY	0, 	4
+			ADDI	-10
+			JNEG	FACEWALL
+			RETURN
+			
 TURNRIGHT:	
 			LOAD	FSlow
 			OUT    	LVELCMD
@@ -92,7 +172,187 @@ TURNLEFT:
 			LOAD	FSLOW
 			OUT    	RVELCMD	
 			JUMP	FACEWALL
+
+			
+Locate:
+	CALL	MeasureDIST0
+	OUT		SSEG1
+	STORE	TilesBehind
+	CALL	MeasureDIST5
+	OUT		SSEG2
+	STORE	TilesForward
+	OUT		RESETPOS
+	
+	LOADI	-90
+	CALL	ROTATE
+	OUT		LCD
+	CALL	MeasureDIST0
+	OUT		SSEG1
+	STORE	TilesLeft
+	CALL	MeasureDIST5
+	OUT		SSEG2
+	STORE	TilesRight
+	
+	;Pack Bits
+	LOAD	TilesForward
+	SHIFT	3
+	OR		TilesBehind
+	SHIFT	3
+	OR		TilesRight
+	SHIFT	3
+	OR		TilesLeft
+	LOC		;Completes Lookup and stores result to AC
+	
+	JZERO	Locate			;LOC returns zero if no match found
+	
+	;Unpack Bits
+	COPY	1, 0
+	ANDI	&B111
+	STORE	LocY
+	COPY	0, 1
+	SHIFT 	-3
+	ANDI	&B111
+	STORE	LocX
+	COPY	0, 1
+	SHIFT 	-6
+	ANDI	&B111
+	STORE	LocTheta
+	COPY	0, 1
+	SHIFT 	-5
+	SHIFT	-4
+	ANDI	&B11111
+	STORE	LocID
+	
+	;Display Location
+	LOAD	LocX
+	SHIFT	4
+	SHIFT	4
+	OR		LocY
+	OUT		SSEG1
+	
+	
+	CALL	StopBeep
+	RETURN
+				
+;***************************************************************
+;* Stop for 3 seconds and beep for 1 second
+;***************************************************************
+StopBeep:
+		LOAD	Zero
+		OUT		LVELCMD
+		OUT		RVELCMD
+		OUT		TIMER
+StopLoop:
+		IN		TIMER
+		ADDI	-10 ;Wait 1 Sec
+		JNEG	StopLoop
 		
+		LOAD	TWO
+		OUT		BEEP
+		OUT		TIMER
+BeepLoop:
+		IN		TIMER
+		ADDI	-10 ;Wait 1 Sec
+		JNEG	BeepLoop
+		
+		OUT		TIMER
+StopLoop2:
+		IN		TIMER
+		ADDI	-10 ;Wait 1 Sec
+		JNEG	StopLoop2
+		
+		RETURN
+
+
+;***************************************************************
+;* Measure Sonar Distance and Store the value, in tiles, to AC
+;***************************************************************
+
+MeasureDIST0:
+tiles00:	IN 		DIST0
+		SUB		diff0
+		JPOS	tiles01
+		LOADI   0
+		RETURN
+tiles01:	IN		DIST0
+		SUB		diff1
+		JPOS	tiles02
+		LOADI	1
+		RETURN
+tiles02:	IN		DIST0
+		SUB		diff2
+		JPOS	tiles03
+		LOADI	2
+		RETURN
+tiles03:	IN		DIST0
+		SUB		diff3
+		JPOS	tiles04
+		LOADI	3
+		RETURN
+tiles04:	IN		DIST0
+		SUB		diff4
+		JPOS	tiles05
+		LOADI	4
+		RETURN
+tiles05: LOADI   5
+		RETURN
+
+		
+MeasureDIST5:
+tiles50:	IN 		DIST5
+		SUB		diff0
+		JPOS	tiles51
+		LOADI   0
+		RETURN
+tiles51:	IN		DIST5
+		SUB		diff1
+		JPOS	tiles52
+		LOADI	1
+		RETURN
+tiles52:	IN		DIST5
+		SUB		diff2
+		JPOS	tiles53
+		LOADI	2
+		RETURN
+tiles53:	IN		DIST5
+		SUB		diff3
+		JPOS	tiles54
+		LOADI	3
+		RETURN
+tiles54:	IN		DIST5
+		SUB		diff4
+		JPOS	tiles55
+		LOADI	4
+		RETURN
+tiles55: LOADI   5
+		RETURN
+		
+;***************************************************************
+;* Ryan's Constants	
+;***************************************************************
+diff0:    DW &H22F
+diff1:    DW &H482
+diff2:    DW &H6ED
+diff3:    DW &H929
+diff4:    DW &HB94
+
+; Data Storage Location
+TilesRight:		DW -1
+TilesLeft:		DW -1
+TilesForward:	DW -1
+TilesBehind:	DW -1
+locy:			DW	0
+locx:			DW	0
+locTheta:		DW	0
+locID:			DW	0
+
+	
+ABS:		JPOS	RET		;Function ABS uses R6&R0. R0 = abs(R0)
+			COPY	6, 0
+			LOADI	0
+			SUBA	0, 0, 6
+RET:		RETURN
+			
 LOOPDIST:			
 		CALL CENTER
 		Shift 2
@@ -123,7 +383,33 @@ LOOPANGLE:
 		SUB FSlow
 		OUT rvelcmd
 		JUMP LOOPANGLE
-RET:	return 
+
+Rotate:		COPY	6, 0	
+			LOADI	0
+			COPY	5, 0
+RotateCheck:
+			IN 		THETA
+			CALL	CENTER
+			SUBA	0, 6, 0
+			JNEG 	CTURN
+			JPOS	CCTURN
+			LOADI	0		
+			OUT 	rvelcmd
+			OUT 	lvelcmd
+			RETURN
+CTURN:
+			LOADI	SlowP
+			OUT 	lvelcmd
+			SUBA	0, 5, 0
+			OUT 	rvelcmd
+			JUMP 	RotateCheck
+CCTURN:
+			LOADI	SlowP
+			OUT 	rvelcmd
+			SUBA	0, 5, 0
+			OUT 	lvelcmd 	
+			JUMP	RotateCheck
+		
 ANGLE:  DW  0
 TARGET: DW  -90
 TEMP1:	DW	2	
@@ -131,25 +417,19 @@ ERROR:  DW  0
 ; The following code ("Center" through "DeadZone") is purely for example.
 ; It attempts to gently keep the robot facing 0 degrees, showing how the
 ; odometer and motor controllers work.
-Center:
-	;IN TIMER
-	;SUB TEMP1
-	; The 0/359 jump in THETA can be difficult to deal with.
-	; This code shows one way to handle it: by moving the
-	; discontinuity away from the current heading.
-	IN     THETA       ; get the current angular position
-	ADDI   -180        ; test whether facing 0-179 or 180-359
-	JPOS   NegAngle    ; robot facing 180-360; handle that separately
-PosAngle:
-	ADDI   180         ; undo previous subtraction
-	;JUMP   CheckAngle  ; THETA positive, so carry on
-	return
-NegAngle:
-	ADDI   -180        ; finish conversion to negative angle:
-	                   ;  angles 180 to 359 become -180 to -1
-	return				   
-					 
+Center:		JNEG	CenterNeg
+			ADDI   	-180        ; test whether facing 0-179 or 180-359
+			JPOS   	SUB180    ; robot facing 180-360; handle that separately
+			JUMP	ADD180
 
+CenterNeg:	ADDI	180
+			JPOS	SUB180
+			JUMP	ADD180
+					 
+SUB180:		ADDI	-180
+			RETURN
+ADD180:		ADDI	180
+			RETURN
 CheckAngle:
 	; AC now contains the +/- angular error from 0, meaning that
 	;  the discontinuity is at 179/-180 instead of 0/359
@@ -227,6 +507,10 @@ DEAD: DW &HDEAD
 ;***************************************************************
 ;* Subroutines
 ;***************************************************************
+
+WNoTimer:	ADDI	-1
+			JPOS	WNoTimer
+			RETURN
 
 WaitAC:		OUT		TIMER
 			COPY	1, 0
@@ -411,8 +695,8 @@ Deg90:    DW 90        ; 90 degrees in odometry units
 Deg180:   DW 180       ; 180
 Deg270:   DW 270       ; 270
 Deg360:   DW 360       ; can never actually happen; for math only
-FSlow:    DW 100       ; 100 is about the lowest velocity value that will move
-RSlow:    DW -100
+FSlow:    DW 150       ; 100 is about the lowest velocity value that will move
+RSlow:    DW -150
 FMid:     DW 350       ; 350 is a medium speed
 RMid:     DW -350
 FFast:    DW 500       ; 500 is almost max speed (511 is max)
@@ -463,3 +747,5 @@ XPOS:     EQU &HC0  ; Current X-position (read only)
 YPOS:     EQU &HC1  ; Y-position
 THETA:    EQU &HC2  ; Current rotational position of robot (0-359)
 RESETPOS: EQU &HC3  ; write anything here to reset odometry to 0
+
+SlowP:    EQU 	120       ; 100 is about the lowest velocity value that will move

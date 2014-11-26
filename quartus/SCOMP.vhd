@@ -64,7 +64,8 @@ ARCHITECTURE a OF SCOMP IS
 		EX_OUTA3,
 		EX_INA,
 		EX_SUBA,
-		EX_LOC
+		EX_LOC,
+		EX_ANDI
 	);
 
 	TYPE STACK_TYPE IS ARRAY (0 TO 7) OF STD_LOGIC_VECTOR(9 DOWNTO 0);
@@ -289,6 +290,8 @@ BEGIN
 							STATE <= EX_SUBA;	
 						WHEN "10"&x"9" =>
 							STATE <= EX_LOC;
+						WHEN "10"&x"A" =>
+							STATE <= EX_ANDI;
 
 						WHEN OTHERS =>
 							STATE <= FETCH;      -- Invalid opcodes default to NOP
@@ -479,7 +482,11 @@ BEGIN
 				WHEN EX_SUBA =>
 					AC(conv_integer(IR(9 DOWNTO 7))) <= AC(conv_integer(IR(6 DOWNTO 4))) - AC(conv_integer(IR(3 DOWNTO 0)));
 					STATE <= FETCH;
-					
+				
+				WHEN EX_ANDI =>
+					AC(0) <= AC(0) AND ("000000" & IR(9 DOWNTO 0));
+					STATE <= FETCH;
+				
 				WHEN EX_LOC =>
 					CASE AC(0)(15 DOWNTO 0) IS
 						WHEN "0000000000000101" => 	AC(0) <= "0000001000110100";
@@ -562,6 +569,7 @@ BEGIN
 						WHEN OTHERS => AC(0) <= "0000000000000000";
 						
 					END CASE;
+					STATE <= FETCH;
 
 					
 				WHEN OTHERS =>
