@@ -596,8 +596,8 @@ BEGIN
 						WHEN "0000000000010010" => 	AC(conv_integer(IR)) <= "0000000000000011";
 						WHEN "0000000000010011" => 	AC(conv_integer(IR)) <= "0000000000000000";
 
-						WHEN OTHERS => AC(conv_integer(IR)) <=;
-					END CASE
+						WHEN OTHERS => AC(conv_integer(IR)) <= "1000000000000000";
+					END CASE;
 					STATE <= FETCH;
 					
 				WHEN OTHERS =>
