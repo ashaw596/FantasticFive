@@ -52,20 +52,20 @@ WaitForUser:
 ;* Main code
 ;***************************************************************
 Main: ; "Real" program starts here.
-		OUT    RESETPOS    ; reset odometry in case wheels moved after programming
-		LOADI  &B001100
-		OUT    SONAREN     ; turn on sonars 2 and 3
+		OUT    	RESETPOS    ; reset odometry in case wheels moved after programming
+		LOADI  	&B00101101
+		OUT   	SONAREN     ; turn on sonars 2 and 3
 		LOADI	5
 		CALL	WaitAC
-		;CALL	FACECLOSE
-		;CALL	FACEWFUNC
-		LOADI  	&B100001
-		OUT    	SONAREN     ; turn on sonars 0 and 5
-		LOADI	5
+		CALL	FACECLOSE
+		CALL	FACEWFUNC
+		;LOADI  	&B100001
+		;OUT    	SONAREN     ; turn on sonars 0 and 5
+		LOADI	10
 		CALL	WaitAC
 		CALL	LOCATE
 		JUMP 	die		
-		OUT    RESETPOS 
+		OUT    	RESETPOS 
 		LOADI	&HFEED
 		OUT		LCD
 		LOADI	90
@@ -203,7 +203,7 @@ Locate:
 	OR		TilesLeft
 	LOC		;Completes Lookup and stores result to AC
 	
-	JZERO	Locate			;LOC returns zero if no match found
+	JZERO   LocError	;LOC returns zero if no match found
 	
 	;Unpack Bits
 	COPY	1, 0
@@ -233,7 +233,11 @@ Locate:
 	
 	CALL	StopBeep
 	RETURN
-				
+		
+LocError:
+	Call	FACEWFUNC
+	Jump	Locate
+		
 ;***************************************************************
 ;* Stop for 3 seconds and beep for 1 second
 ;***************************************************************
@@ -254,7 +258,8 @@ BeepLoop:
 		IN		TIMER
 		ADDI	-10 ;Wait 1 Sec
 		JNEG	BeepLoop
-		
+		LOADI	0
+		OUT		BEEP
 		OUT		TIMER
 StopLoop2:
 		IN		TIMER
