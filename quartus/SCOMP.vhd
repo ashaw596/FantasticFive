@@ -65,14 +65,17 @@ ARCHITECTURE a OF SCOMP IS
 		EX_INA,
 		EX_SUBA,
 		EX_LOC,
-		EX_ANDI
+		EX_ANDI,
+		EX_WTR,
+		EX_I2P
 	);
 
 	TYPE STACK_TYPE IS ARRAY (0 TO 7) OF STD_LOGIC_VECTOR(9 DOWNTO 0);
 	TYPE AC_ARRAY IS ARRAY (0 TO 7) OF STD_LOGIC_VECTOR(15 DOWNTO 0);
+	TYPE BIGGER_STACK IS ARRAY (0 TO 11) OF STD_LOGIC_VECTOR(9 DOWNTO 0);
 
 	SIGNAL STATE        : STATE_TYPE;
-	SIGNAL PC_STACK     : STACK_TYPE;
+	SIGNAL PC_STACK     : BIGGER_STACK;
 	SIGNAL IO_IN        : STD_LOGIC_VECTOR(15 DOWNTO 0);
 	SIGNAL AC           : AC_ARRAY;
 	SIGNAL AC_SAVED     : STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -108,7 +111,7 @@ BEGIN
 		wrcontrol_aclr_a => "NONE",
 		address_aclr_a   => "NONE",
 		outdata_aclr_a   => "NONE",
-		init_file        => "facewall.mif",
+		init_file        => "albertPathPlanning.mif",
 		lpm_hint         => "ENABLE_RUNTIME_MOD=NO",
 		lpm_type         => "altsyncram"
 	)
@@ -292,6 +295,10 @@ BEGIN
 							STATE <= EX_LOC;
 						WHEN "10"&x"A" =>
 							STATE <= EX_ANDI;
+						WHEN "10"&x"B" =>
+							STATE <= EX_WTR;
+						WHEN "10"&x"C" =>
+							STATE <= EX_I2P;
 
 						WHEN OTHERS =>
 							STATE <= FETCH;      -- Invalid opcodes default to NOP
@@ -370,7 +377,7 @@ BEGIN
 					STATE          <= EX_STORE;
 
 				WHEN EX_CALL =>
-					FOR i IN 0 TO 6 LOOP
+					FOR i IN 0 TO 10 LOOP
 						PC_STACK(i + 1) <= PC_STACK(i);
 					END LOOP;
 					PC_STACK(0) <= PC;
@@ -378,7 +385,7 @@ BEGIN
 					STATE       <= FETCH;
 
 				WHEN EX_RETURN =>
-					FOR i IN 0 TO 6 LOOP
+					FOR i IN 0 TO 10 LOOP
 						PC_STACK(i) <= PC_STACK(i + 1);
 					END LOOP;
 					PC          <= PC_STACK(0);
@@ -570,7 +577,60 @@ BEGIN
 						
 					END CASE;
 					STATE <= FETCH;
+					
+				WHEN EX_WTR =>
+					CASE AC(0) IS
+						WHEN "0000000000000001" => 	AC(conv_integer(IR)) <= "0000000000000001";
+						WHEN "0000000000000010" => 	AC(conv_integer(IR)) <= "0000000000000001";
+						WHEN "0000000000000011" => 	AC(conv_integer(IR)) <= "0000000000000001";
+						WHEN "0000000000000100" => 	AC(conv_integer(IR)) <= "0000000000000001";
+						WHEN "0000000000000101" => 	AC(conv_integer(IR)) <= "0000000000000001";
+						WHEN "0000000000000110" => 	AC(conv_integer(IR)) <= "0000000000000010";
+						WHEN "0000000000000111" => 	AC(conv_integer(IR)) <= "0000000000000010";
+						WHEN "0000000000001000" => 	AC(conv_integer(IR)) <= "0000000000000010";
+						WHEN "0000000000001001" => 	AC(conv_integer(IR)) <= "0000000000000011";
+						WHEN "0000000000001010" => 	AC(conv_integer(IR)) <= "0000000000000011";
+						WHEN "0000000000001011" => 	AC(conv_integer(IR)) <= "0000000000000011";
+						WHEN "0000000000001100" => 	AC(conv_integer(IR)) <= "0000000000000000";
+						WHEN "0000000000001101" => 	AC(conv_integer(IR)) <= "0000000000000001";
+						WHEN "0000000000001110" => 	AC(conv_integer(IR)) <= "0000000000000001";
+						WHEN "0000000000001111" => 	AC(conv_integer(IR)) <= "0000000000000000";
+						WHEN "0000000000010000" => 	AC(conv_integer(IR)) <= "0000000000000011";
+						WHEN "0000000000010001" => 	AC(conv_integer(IR)) <= "0000000000000011";
+						WHEN "0000000000010010" => 	AC(conv_integer(IR)) <= "0000000000000011";
+						WHEN "0000000000010011" => 	AC(conv_integer(IR)) <= "0000000000000000";
 
+						WHEN OTHERS => AC(conv_integer(IR)) <= "1000000000000000";
+					END CASE;
+					STATE <= FETCH;
+					
+				WHEN EX_I2P =>
+					CASE AC(0) IS
+						WHEN "0000000000000001" => 	AC(conv_integer(IR)) <= "0000011000000100";
+						WHEN "0000000000000010" => 	AC(conv_integer(IR)) <= "0000010100000100";
+						WHEN "0000000000000011" => 	AC(conv_integer(IR)) <= "0000010000000100";
+						WHEN "0000000000000100" => 	AC(conv_integer(IR)) <= "0000001100000100";
+						WHEN "0000000000000101" => 	AC(conv_integer(IR)) <= "0000001000000100";
+						WHEN "0000000000000110" => 	AC(conv_integer(IR)) <= "0000000100000100";
+						WHEN "0000000000000111" => 	AC(conv_integer(IR)) <= "0000000100000011";
+						WHEN "0000000000001000" => 	AC(conv_integer(IR)) <= "0000000100000010";
+						WHEN "0000000000001001" => 	AC(conv_integer(IR)) <= "0000000100000001";
+						WHEN "0000000000001010" => 	AC(conv_integer(IR)) <= "0000001000000001";
+						WHEN "0000000000001011" => 	AC(conv_integer(IR)) <= "0000001100000001";
+						WHEN "0000000000001100" => 	AC(conv_integer(IR)) <= "0000010000000001";
+						WHEN "0000000000001101" => 	AC(conv_integer(IR)) <= "0000010000000010";
+						WHEN "0000000000001110" => 	AC(conv_integer(IR)) <= "0000001100000010";
+						WHEN "0000000000001111" => 	AC(conv_integer(IR)) <= "0000001000000010";
+						WHEN "0000000000010000" => 	AC(conv_integer(IR)) <= "0000001000000011";
+						WHEN "0000000000010001" => 	AC(conv_integer(IR)) <= "0000001100000011";
+						WHEN "0000000000010010" => 	AC(conv_integer(IR)) <= "0000010000000011";
+						WHEN "0000000000010011" => 	AC(conv_integer(IR)) <= "0000010100000011";
+
+
+						WHEN OTHERS => AC(conv_integer(IR)) <= "1000000000000000";
+					END CASE;
+					STATE <= FETCH;
+					
 					
 				WHEN OTHERS =>
 					STATE <= FETCH;          -- If an invalid state is reached, return to FETCH
