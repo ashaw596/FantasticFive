@@ -263,6 +263,17 @@ StopLoop2:
 		
 		RETURN
 
+		
+WallToRight:
+		LOADI	90
+		COPY	2, 0
+		LOAD	LocID
+		WTR		1
+		LOAD	LocTheta
+		SUB		0, 1, 0
+		ADDI	1
+		MULTA	0, 0, 2
+		CALL	ROTATE
 
 ;***************************************************************
 ;* Measure Sonar Distance and Store the value, in tiles, to AC
