@@ -72,9 +72,10 @@ ARCHITECTURE a OF SCOMP IS
 
 	TYPE STACK_TYPE IS ARRAY (0 TO 7) OF STD_LOGIC_VECTOR(9 DOWNTO 0);
 	TYPE AC_ARRAY IS ARRAY (0 TO 7) OF STD_LOGIC_VECTOR(15 DOWNTO 0);
+	TYPE BIGGER_STACK IS ARRAY (0 TO 11) OF STD_LOGIC_VECTOR(9 DOWNTO 0);
 
 	SIGNAL STATE        : STATE_TYPE;
-	SIGNAL PC_STACK     : STACK_TYPE;
+	SIGNAL PC_STACK     : BIGGER_STACK;
 	SIGNAL IO_IN        : STD_LOGIC_VECTOR(15 DOWNTO 0);
 	SIGNAL AC           : AC_ARRAY;
 	SIGNAL AC_SAVED     : STD_LOGIC_VECTOR(15 DOWNTO 0);
@@ -110,7 +111,7 @@ BEGIN
 		wrcontrol_aclr_a => "NONE",
 		address_aclr_a   => "NONE",
 		outdata_aclr_a   => "NONE",
-		init_file        => "facewall.mif",
+		init_file        => "albertPathPlanning.mif",
 		lpm_hint         => "ENABLE_RUNTIME_MOD=NO",
 		lpm_type         => "altsyncram"
 	)
@@ -376,7 +377,7 @@ BEGIN
 					STATE          <= EX_STORE;
 
 				WHEN EX_CALL =>
-					FOR i IN 0 TO 6 LOOP
+					FOR i IN 0 TO 10 LOOP
 						PC_STACK(i + 1) <= PC_STACK(i);
 					END LOOP;
 					PC_STACK(0) <= PC;
@@ -384,7 +385,7 @@ BEGIN
 					STATE       <= FETCH;
 
 				WHEN EX_RETURN =>
-					FOR i IN 0 TO 6 LOOP
+					FOR i IN 0 TO 10 LOOP
 						PC_STACK(i) <= PC_STACK(i + 1);
 					END LOOP;
 					PC          <= PC_STACK(0);
