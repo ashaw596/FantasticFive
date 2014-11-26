@@ -275,6 +275,16 @@ WallToRight:
 		CALL	CENTER
 		CALL	ROTATE
 		RETURN
+		
+		
+ShowLocation:	; Current location in ID is passed in AC
+		I2P		0
+		OUT		SSEG2
+		CALL	StopBeep
+		RETURN
+	
+
+		
 ;***************************************************************
 ;* Measure Sonar Distance and Store the value, in tiles, to AC
 ;***************************************************************
