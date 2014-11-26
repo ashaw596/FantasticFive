@@ -65,7 +65,8 @@ ARCHITECTURE a OF SCOMP IS
 		EX_INA,
 		EX_SUBA,
 		EX_LOC,
-		EX_ANDI
+		EX_ANDI,
+		EX_WTR
 	);
 
 	TYPE STACK_TYPE IS ARRAY (0 TO 7) OF STD_LOGIC_VECTOR(9 DOWNTO 0);
@@ -293,6 +294,8 @@ BEGIN
 							STATE <= EX_LOC;
 						WHEN "10"&x"A" =>
 							STATE <= EX_ANDI;
+						WHEN "10"&x"B" =>
+							STATE <= EX_WTR;
 
 						WHEN OTHERS =>
 							STATE <= FETCH;      -- Invalid opcodes default to NOP
@@ -571,7 +574,32 @@ BEGIN
 						
 					END CASE;
 					STATE <= FETCH;
+					
+				WHEN EX_WTR =>
+					CASE AC(0) IS
+						WHEN "0000000000000001" => 	AC(conv_integer(IR)) <= "0000000000000001";
+						WHEN "0000000000000010" => 	AC(conv_integer(IR)) <= "0000000000000001";
+						WHEN "0000000000000011" => 	AC(conv_integer(IR)) <= "0000000000000001";
+						WHEN "0000000000000100" => 	AC(conv_integer(IR)) <= "0000000000000001";
+						WHEN "0000000000000101" => 	AC(conv_integer(IR)) <= "0000000000000001";
+						WHEN "0000000000000110" => 	AC(conv_integer(IR)) <= "0000000000000010";
+						WHEN "0000000000000111" => 	AC(conv_integer(IR)) <= "0000000000000010";
+						WHEN "0000000000001000" => 	AC(conv_integer(IR)) <= "0000000000000010";
+						WHEN "0000000000001001" => 	AC(conv_integer(IR)) <= "0000000000000011";
+						WHEN "0000000000001010" => 	AC(conv_integer(IR)) <= "0000000000000011";
+						WHEN "0000000000001011" => 	AC(conv_integer(IR)) <= "0000000000000011";
+						WHEN "0000000000001100" => 	AC(conv_integer(IR)) <= "0000000000000000";
+						WHEN "0000000000001101" => 	AC(conv_integer(IR)) <= "0000000000000001";
+						WHEN "0000000000001110" => 	AC(conv_integer(IR)) <= "0000000000000001";
+						WHEN "0000000000001111" => 	AC(conv_integer(IR)) <= "0000000000000000";
+						WHEN "0000000000010000" => 	AC(conv_integer(IR)) <= "0000000000000011";
+						WHEN "0000000000010001" => 	AC(conv_integer(IR)) <= "0000000000000011";
+						WHEN "0000000000010010" => 	AC(conv_integer(IR)) <= "0000000000000011";
+						WHEN "0000000000010011" => 	AC(conv_integer(IR)) <= "0000000000000000";
 
+						WHEN OTHERS => AC(conv_integer(IR)) <= "1000000000000000";
+					END CASE
+					STATE <= FETCH;
 					
 				WHEN OTHERS =>
 					STATE <= FETCH;          -- If an invalid state is reached, return to FETCH
