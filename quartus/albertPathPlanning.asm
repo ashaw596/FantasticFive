@@ -45,13 +45,10 @@ WaitForUser:
 ;***************************************************************
 Main: ; "Real" program starts here.
 				OUT    RESETPOS    ; reset odometry in case wheels moved after programming
-				LOADI  &B00101101
+				LOADI  &B00101000
 				OUT    SONAREN     ; turn on sonars 2 and 3
 				
-				LOAD	SQUARESize
-				ADD		SQUARESize
-				STORE	FOLLOWDIST
-				CALL 	WALLLOOP
+				CALL	PATHFOLLOWING
 				;OUT
 				JUMP 	die
 
