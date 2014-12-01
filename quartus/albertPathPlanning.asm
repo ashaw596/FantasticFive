@@ -73,7 +73,9 @@ PATHLOOP:		LOAD	CURPOS
 				
 SHOWDONE:		JUMP	PATHCHECK
 				
-CHECKDONE:		COPY	1, 0
+CHECKDONE:		CALL    PATHFOLLOWLOOP
+                JUMP    PATHLOOP
+PATHFOLLOWLOOP: COPY	1, 0
 				ADDI	-6
 				JNEG	PATH_1_5
 				COPY	0, 1
@@ -312,6 +314,13 @@ RET1:			LOADI	1
 				RETURN	1
 RET-1:			LOADI	-1
 				RETURN				
+                
+ShowLocation:	                    ; Current location in ID is passed in AC
+                I2P		0
+                OUT		SSEG2
+                CALL	StopBeep
+                RETURN
+        
 ;***************************************************************
 ;* Stop for 3 seconds and beep for 1 second
 ;***************************************************************
